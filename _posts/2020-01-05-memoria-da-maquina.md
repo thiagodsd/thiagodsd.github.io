@@ -7,7 +7,7 @@ date:   2020-01-05 14:43:00 +0300
 tags: aprendizagem-estatistica notas
 ---
 
-{% assign b = "bib_memoria-da-maquina" %}
+<!-- {% assign b = "bib_memoria-da-maquina" %} -->
 
 Há algum tempo venho tentando entender de que se trata inteligência artificial. Após os últimos dois anos talvez a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e essas coisas recebem nomes diferentes quando vistas de perspectivas diferentes. E há muitas perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_. <!-- {% cite davidmackay2003 stuartrussell2015 -f {{b}} %} -->
 
