@@ -1,9 +1,6 @@
-I"V\
-<p>Há algum tempo venho tentando entender de que se trata inteligência artificial. Após os últimos dois anos talvez a única coisa razoavelmente clara é que essa entidade <em>Inteligência Artificial</em> tem um monte de coisa dentro e essas coisas recebem nomes diferentes quando vistas de perspectivas diferentes. E há muitas perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja <em>teoria da informação</em>, <em>otimização</em>, <em>estatística</em>, <em>teoria dos jogos</em> ou mesmo <em>física</em>. <a class="citation" href="#davidmackay2003">[1,2]</a></p>
+I",X<p>Há algum tempo venho tentando entender de que se trata inteligência artificial. Até agora a única coisa razoavelmente clara é que essa entidade <em>Inteligência Artificial</em> tem um monte de coisa dentro e cada uma dessas coisas recebe nomes diferentes quando vista de perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja <em>teoria da informação</em>, <em>otimização</em>, <em>estatística</em>, <em>teoria dos jogos</em> ou mesmo <em>física</em>.</p>
 
 <p>Como bom sujeito treinado em física, pensei em sistematizar algumas ideias seguindo a estrutura de princípios que combinados e usados com esperteza conduzem a resultados úteis. Porém o zoológico de ideias e técnicas é muito vasto e por isso me pareceu melhor maximizar a entropia e estruturar as coisas em pequenos fragmentos desordenados.</p>
-
-<p>Apesar das referências ao final de cada fragmento, a fonte de quase tudo que segue são minhas anotações das disciplinas sobre o assunto que cursei durante a graduação e do período que estudei para uma prova de um processo seletivo para uma vaga de cientista de dados.</p>
 
 <p><br /><br /><br /></p>
 
@@ -11,14 +8,14 @@
 
 <p class="topico">estatística</p>
 
-<p>Do ponto de vista estatístico ambas, regressão e classificação, podem ser pensadas como a busca pela aproximação de uma certa $f(y | x, w)$ que relaciona o conjunto de propriedades $x$ de uma observação à chance de certa informação de interesse $y$ dessa observação possuir determinado valor.</p>
+<p>Do ponto de vista estatístico ambas, regressão e classificação, podem ser pensadas como a busca pela aproximação de uma certa $f(y | x, w)$ que relaciona o conjunto de propriedades $x$ de uma observação à chance $p$ de certa informação de interesse $y$ dessa observação possuir determinado valor.</p>
 
 <p>Em uma regressão $y$ é uma variável contínua. No problema de classificação $y$ é discreta. Em particular $y \in \{0, 1\}$ dá origem a problemas de classificação binária.<br />
-Fundamentalmente nunca se conhece $p = f(y | x, w)$, então há alguma liberdade na escolha da forma funcional de $p$. Por muitos motivos as funções que compõem a chamada <em>família exponencial</em> costumam ser <em>hors concours</em>. Duas escolhas clássicas são</p>
+Fundamentalmente essa função $f$ tal que $f(y | x,w) \mapsto p$ nunca é completamente conhecida então há alguma liberdade na sua escolha. Desde um ponto de vista probabilístico as funções que compõem a chamada <em>família exponencial</em> recebem atenção especial na tarefa de estimar $p$. Duas escolhas clássicas são</p>
 
 <script type="math/tex; mode=display">\begin{cases}
-p \sim \mathcal{N}(y|w^T \phi(x), \sigma^2)         \nonumber \\
-p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \right)
+p \sim \mathcal{N}(y|w^T \phi(x), \sigma^2) \qquad \text{regressão}         \nonumber \\
+p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \qquad \text{classificação} \right)
 \end{cases}</script>
 
 <h2 id="a-regressão-logística">a regressão logística</h2>
@@ -81,7 +78,7 @@ Essa inversa também tem nome: <em><strong>função sigmoide</strong></em></p>
 <script type="math/tex; mode=display">\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento}}{\neg\text{evento}} = \frac{p_+}{p_-} =  \frac{\sigma(w^T x)}{1-\sigma(w^T x)} = \frac{\sigma(w^T x)}{\sigma(-w^T x)}  \nonumber</script>
 
 <p><br /></p>
-<p style="color: red; font-weight: 600;"> a partir daqui os parágrafos são rascunhos e esboços <a class="citation" href="#davidmackay2003">[1,3,4]</a> </p>
+<p style="color: red; font-weight: 600;"> a partir daqui os parágrafos são rascunhos e esboços </p>
 <p><br /></p>
 
 <p>Do ponto de vista prático a $\ref{reglog}$ é a equação que caracteriza a regressão logística binária. Para</p>
@@ -289,46 +286,5 @@ A probabilidade de sortear uma bola preta, na urna $u$, em um sorteio único é 
 
 <h1 id="referências">referências</h1>
 
-<div class="tex2jax_ignore">
-  <ol class="bibliography"><li><div style="word-break: break-all;">
-
-MacKay, David J. C..
-
-
-<span id="davidmackay2003"><em>Information Theory, Inference and Learning Algorithms</em></span>.
-
-
-</div>
-</li>
-<li><div style="word-break: break-all;">
-
-Russell, Stuart.
-
-
-<span id="stuartrussell2015"><em>Artificial Intelligence: A Modern Approach</em></span>.
-
-
-</div>
-</li>
-<li><div style="word-break: break-all;">
-
-Domingos, Pedro.
-
-
-<span id="Domingos2012"><em>A few useful things to know about machine learning</em></span>.
-
-
-</div>
-</li>
-<li><div style="word-break: break-all;">
-
-Marmerola, Guilherme Duarte.
-
-
-<span id="marmerola_calibration_2018"><em>Calibration of probabilities for tree-based models</em></span>.
-
-
-</div>
-</li></ol>
-</div>
+<div class="tex2jax_ignore"></div>
 :ET

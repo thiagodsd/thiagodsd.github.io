@@ -1,113 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <!-- title -->
-    <title>
-        
-            memória da máquina
-        
-    </title>
-    <meta name="description"   content = " ">
-    
-    
-    <!-- twitter card -->
-    <meta name="twitter:card"  content = "summary">
-    <meta name="twitter:title" content = "memória da máquina">
-    
-    <meta name="twitter:description" content = "anotações desordenadas sobre as periferias da inteligência artificial">
-    
-    
-    <meta property="og:image"  content = "http://localhost:4000/img/t_memoria-da-maquina.png">
-    
-
-    
-    <!-- highlighter -->
-    
-    <style>
-        @import "http://localhost:4000/assets/css/syntax.css"; 
-
-        h2 { text-align     : center; 
-             font-weight    : 600;
-             margin-top     : 3em;
-             margin-bottom  : 0.5em;
-             width          : 75%; 
-             margin-left    : auto;
-             margin-right   : auto;
-             vertical-align : middle;}
-        
-        h3 { font-style : italic;
-             font-size  : normal;}
-        
-        .topico { text-align   : center; 
-                  font-size    : small;
-                  font-weight  : 500;
-                  width        : 50%; 
-                  margin-left  : auto;
-                  margin-right : auto; }
-
-        .ref { font-size   : small;
-               font-weight : 500; }
-        
-        .ss { font-size      : small;
-              font-weight    : 500;
-              vertical-align : middle; }
-    </style>
-    
-    
-    
-    <!-- responsiveness -->
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    
-    
-    <!-- latex -->
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "all"
-          }
-        },
-        tex2jax: {
-          inlineMath: [ ['$','$'], ['\(', '\)'] ],
-          displayMath: [ ['$$','$$'] ],
-          processEscapes: true,
-        },
-        "HTML-CSS": { linebreaks: { automatic: true } },
-        "SVG": { linebreaks: { automatic: true } }
-      });
-    </script>
-
-</head>
-
-<body>
-    <header>
-    <h1><a href='http://localhost:4000/'>zustandssumme</a></h1>
-
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-          }
-        });
-      </script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>     
-</header>
-<a href='http://localhost:4000/'>início</a> | <a href='http://localhost:4000/archive/'>arquivo</a> | <a href='http://localhost:4000/about/'>sobre</a>
-<hr>
-
-
-    <h1>memória da máquina</h1>
-<small>tags: <i>aprendizagem-estatistica, notas</i></small>
-<div class='separator'></div>
-        
-<p>Há algum tempo venho tentando entender de que se trata inteligência artificial. Até agora a única coisa razoavelmente clara é que essa entidade <em>Inteligência Artificial</em> tem um monte de coisa dentro e cada uma dessas coisas recebe nomes diferentes quando vista de perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja <em>teoria da informação</em>, <em>otimização</em>, <em>estatística</em>, <em>teoria dos jogos</em> ou mesmo <em>física</em>.</p>
+I"*X<p>Há algum tempo venho tentando entender de que se trata inteligência artificial. Até agora a única coisa razoavelmente clara é que essa entidade <em>Inteligência Artificial</em> tem um monte de coisa dentro e cada uma dessas coisas recebe nomes diferentes quando vista de perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja <em>teoria da informação</em>, <em>otimização</em>, <em>estatística</em>, <em>teoria dos jogos</em> ou mesmo <em>física</em>.</p>
 
 <p>Como bom sujeito treinado em física, pensei em sistematizar algumas ideias seguindo a estrutura de princípios que combinados e usados com esperteza conduzem a resultados úteis. Porém o zoológico de ideias e técnicas é muito vasto e por isso me pareceu melhor maximizar a entropia e estruturar as coisas em pequenos fragmentos desordenados.</p>
 
@@ -131,10 +22,10 @@ p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \right) \quad \text{(classificaçã
 
 <p class="topico">classificação</p>
 
-<p>Nos primórdios nada havia. Então surgiu a regressão linear. Muita gente boa debruçou sobre esse problema, dando origem a métodos como o dos mínimos quadrados.<br />
+<p>Nos primórdios nada havia. Então surgiu a regressão linear. Muita gente boa debruçou sobre esse problema, dando origem a por exemplo a técnica dos mínimos quadrados.<br />
 A princípio os métodos de regressão só funcionam quando a variável de interesse $y$ – ou <em>“target”</em>, ou <em>“variável resposta”</em>, ou <em>“variável dependente”</em> – é contínua.</p>
 
-<p>A ideia na regressão logística é usar técnicas/algoritmos de regressão para resolver problemas de classificação. Daí a esquizofrenia da regressão logística – um método de classificação com “regressão” no nome.</p>
+<p>Fundamentalmente a ideia na regressão logística é usar técnicas/algoritmos de regressão para resolver problemas de classificação. Daí a esquizofrenia da regressão logística – um método de classificação com “regressão” no nome.</p>
 
 <p>O truque é limitar o resultado da regressão no intervalo $[0, 1]$, para ter cara de probabilidade, e eventualmente definir um valor de probabilidade que separa as classes $0$ e $1$.</p>
 
@@ -162,7 +53,7 @@ A princípio os métodos de regressão só funcionam quando a variável de inter
 \end{cases}</script>
 
 <p>Essas duas funções $\mathcal{F}(p)$ e $\mathcal{G}(\mathcal{F}(p))$ são chamadas por aí respectivamente de <em><strong>odds</strong></em>, ou “chance”, e <em><strong>logit</strong></em>, que já vi chamarem de “logíto” também.<br />
-$\mathcal{G}(\mathcal{F}(p))$ leva <em>pseudo-probabilidades</em> nos reais, então para para resolver um problema de classificação usando os métodos de regressão, basta aplicar $\mathcal{F}^{-1}(\mathcal{G}^{-1}(\cdot)) \equiv \sigma(\cdot)$ no resultado.<br />
+$\mathcal{G}(\mathcal{F}(p))$ leva probabilidades nos reais, então para para resolver um problema de classificação usando os métodos de regressão, basta aplicar $\mathcal{F}^{-1}(\mathcal{G}^{-1}(\cdot)) \equiv \sigma(\cdot)$ no resultado.<br />
 Essa inversa também tem nome: <em><strong>função sigmoide</strong></em></p>
 
 <script type="math/tex; mode=display">\sigma(x) = \frac{1}{1+e^{-x}}</script>
@@ -396,19 +287,4 @@ A probabilidade de sortear uma bola preta, na urna $u$, em um sorteio único é 
 <h1 id="referências">referências</h1>
 
 <div class="tex2jax_ignore"></div>
-
-        
-
-
-<script>
-    var headings = document.querySelectorAll("h2[id]");
-
-    for (var i = 0; i < headings.length; i++) {
-        headings[i].innerHTML =
-          '<span class="ss"><a href="#' + headings[i].id + '">' + '&#xa7;' + '</a></span> ' + headings[i].innerText;
-    }
-</script>
-<hr>
-<!-- <p><small> <i>Build with <a href="https://jekyllrb.com/">Jekyll</a> and  <a href="https://github.com/cyevgeniy/jekyll-true-minimal/">true minimal theme</a></i> </small></p> -->
-</body>
-</html>
+:ET

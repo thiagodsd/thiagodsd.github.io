@@ -7,36 +7,34 @@ date:   2020-01-05 14:43:00 +0300
 tags: aprendizagem-estatistica notas
 ---
 
-Há algum tempo venho tentando entender de que se trata inteligência artificial. Após os últimos dois anos talvez a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e essas coisas recebem nomes diferentes quando vistas de perspectivas diferentes. E há muitas perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_.
+Há algum tempo venho tentando entender de que se trata inteligência artificial. Até agora a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e cada uma dessas coisas recebe nomes diferentes quando vista de perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_.
 
 Como bom sujeito treinado em física, pensei em sistematizar algumas ideias seguindo a estrutura de princípios que combinados e usados com esperteza conduzem a resultados úteis. Porém o zoológico de ideias e técnicas é muito vasto e por isso me pareceu melhor maximizar a entropia e estruturar as coisas em pequenos fragmentos desordenados.
 
-Apesar das referências ao final de cada fragmento, a fonte de quase tudo que segue são minhas anotações das disciplinas sobre o assunto que cursei durante a graduação e do período que estudei para uma prova de um processo seletivo para uma vaga de cientista de dados.
-
-<br/><br/><br/>
+<br/><br/>
 
 ## o hello world do raciocínio probabilístico
 
 <p class="topico">estatística</p>
 
-Do ponto de vista estatístico ambas, regressão e classificação, podem ser pensadas como a busca pela aproximação de uma certa $f(y \| x, w)$ que relaciona o conjunto de propriedades $x$ de uma observação à chance de certa informação de interesse $y$ dessa observação possuir determinado valor.
+Do ponto de vista estatístico ambas, regressão e classificação, podem ser pensadas como a busca pela aproximação de uma certa $f(y \| x, w)$ que relaciona o conjunto de propriedades $x$ de uma observação à chance $p$ de certa informação de interesse $y$ dessa observação possuir determinado valor.
 
 Em uma regressão $y$ é uma variável contínua. No problema de classificação $y$ é discreta. Em particular $y \in \\{0, 1\\}$ dá origem a problemas de classificação binária.<br/>
-Fundamentalmente nunca se conhece $p = f(y \| x, w)$, então há alguma liberdade na escolha da forma funcional de $p$. Por muitos motivos as funções que compõem a chamada _família exponencial_ costumam ser _hors concours_. Duas escolhas clássicas são
+Fundamentalmente essa função $f$ tal que $f(y \| x,w) \mapsto p$ nunca é completamente conhecida então há alguma liberdade na sua escolha. Desde um ponto de vista probabilístico as funções que compõem a chamada _família exponencial_ recebem atenção especial na tarefa de estimar $p$. Duas escolhas clássicas são
 
 $$\begin{cases}
-p \sim \mathcal{N}(y|w^T \phi(x), \sigma^2)         \nonumber \\
-p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \right)
+p \sim \mathcal{N}(y|w^T \phi(x), \sigma^2) \qquad \text{(regressão)}         \nonumber \\
+p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \right) \quad \text{(classificação)} 
 \end{cases}$$
 
 ## a regressão logística
 
 <p class="topico">classificação</p>
 
-Nos primórdios nada havia. Então surgiu a regressão linear. Muita gente boa debruçou sobre esse problema, dando origem a por exemplo a técnica dos mínimos quadrados.<br/>
+Nos primórdios nada havia. Então surgiu a regressão linear. Muita gente boa debruçou sobre esse problema, dando origem a métodos como o dos mínimos quadrados.<br/>
 A princípio os métodos de regressão só funcionam quando a variável de interesse $y$ -- ou _"target"_, ou _"variável resposta"_, ou _"variável dependente"_ -- é contínua.
 
-Fundamentalmente a ideia na regressão logística é usar técnicas/algoritmos de regressão para resolver problemas de classificação. Daí a esquizofrenia da regressão logística -- um método de classificação com "regressão" no nome.
+A ideia na regressão logística é usar técnicas/algoritmos de regressão para resolver problemas de classificação. Daí a esquizofrenia da regressão logística -- um método de classificação com "regressão" no nome.
 
 O truque é limitar o resultado da regressão no intervalo $\[0, 1\]$, para ter cara de probabilidade, e eventualmente definir um valor de probabilidade que separa as classes $0$ e $1$.
 
@@ -64,7 +62,7 @@ $$\begin{cases}
 \end{cases}$$
 
 Essas duas funções $\mathcal{F}(p)$ e $\mathcal{G}(\mathcal{F}(p))$ são chamadas por aí respectivamente de _**odds**_, ou "chance", e _**logit**_, que já vi chamarem de "logíto" também.<br/>
-$\mathcal{G}(\mathcal{F}(p))$ leva probabilidades nos reais, então para para resolver um problema de classificação usando os métodos de regressão, basta aplicar $\mathcal{F}^{-1}(\mathcal{G}^{-1}(\cdot)) \equiv \sigma(\cdot)$ no resultado.<br/>
+$\mathcal{G}(\mathcal{F}(p))$ leva _pseudo-probabilidades_ nos reais, então para para resolver um problema de classificação usando os métodos de regressão, basta aplicar $\mathcal{F}^{-1}(\mathcal{G}^{-1}(\cdot)) \equiv \sigma(\cdot)$ no resultado.<br/>
 Essa inversa também tem nome: _**função sigmoide**_
 
 $$ \sigma(x) = \frac{1}{1+e^{-x}} $$
