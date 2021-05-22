@@ -9,6 +9,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 
 kramdown:
+  engine: mathjax
   input: GFM
   syntax_highlighter: rouge
   parse_block_html: true
