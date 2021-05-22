@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <!-- title -->
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %} 
+            {{ site.name }} &mdash; {{ site.description }}
+        {% endif %}
+    </title>
+    <meta name="description"   content = "{{ site.description }}">
+    
+    
+    <!-- twitter card -->
+    <meta name="twitter:card"  content = "summary">
+    <meta name="twitter:title" content = "{{ page.title }}">
+    {% if page.description %}
+    <meta name="twitter:description" content = "{{ page.description }}">
+    {% endif %}
+    {% if page.img %}
+    <meta property="og:image"  content = "{{site.url}}{{page.img}}">
+    {% endif %}
+
+    
+    <!-- highlighter -->
+    {% if site.highlighter %}
+    <style>
+        @import "{{ site.url }}/assets/css/syntax.css"; 
+
+        h2 { text-align     : center; 
+             font-weight    : 600;
+             margin-top     : 3em;
+             margin-bottom  : 0.5em;
+             width          : 75%; 
+             margin-left    : auto;
+             margin-right   : auto;
+             vertical-align : middle;}
+        
+        h3 { font-style : italic;
+             font-size  : normal;}
+        
+        .topico { text-align   : center; 
+                  font-size    : small;
+                  font-weight  : 500;
+                  width        : 50%; 
+                  margin-left  : auto;
+                  margin-right : auto; }
+
+        .ref { font-size   : small;
+               font-weight : 500; }
+        
+        .ss { font-size      : small;
+              font-weight    : 500;
+              vertical-align : middle; }
+    </style>
+    {% endif %}
+    
+    
+    <!-- responsiveness -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    
+    <!-- latex -->
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "all"
+          }
+        },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ['\(', '\)'] ],
+          displayMath: [ ['$$','$$'] ],
+          processEscapes: true,
+        },
+        "HTML-CSS": { linebreaks: { automatic: true } },
+        "SVG": { linebreaks: { automatic: true } }
+      });
+    </script>
+
+</head>
+
+<body>
+    {% include header.html %}
+
+    {{ content }}
+<hr>
+<!-- <p><small> <i>Build with <a href="https://jekyllrb.com/">Jekyll</a> and  <a href="https://github.com/cyevgeniy/jekyll-true-minimal/">true minimal theme</a></i> </small></p> -->
+</body>
+</html>

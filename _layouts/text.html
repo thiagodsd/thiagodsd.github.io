@@ -1,0 +1,19 @@
+---
+layout: galeano
+---
+<h1>{{ page.title }}{{ page.shortUrl }}</h1>
+<small>tags: <i>{{ page.tags | join: ", "}}</i></small>
+<div class='separator'></div>
+        
+{{ content | toc }}
+        
+{% if site.disqus-id %} {% include comments.html %} {% endif %}
+
+<script>
+    var headings = document.querySelectorAll("h2[id]");
+
+    for (var i = 0; i < headings.length; i++) {
+        headings[i].innerHTML =
+          '<span class="ss"><a href="#' + headings[i].id + '">' + '&#xa7;' + '</a></span> ' + headings[i].innerText;
+    }
+</script>

@@ -1,0 +1,151 @@
+I"w,<p>Enxergo dois possíveis pontos de partida: o <strong>Princípio de D’Alembert</strong> e o <strong>Princípio da Mínima Ação</strong>. Ambos são equivalentes e para os propósitos do texto possuem vantagens e desvantagens.</p>
+
+<p>O Princípio de D’Alembert me parece mais natural, mas o caminho é mais longo; o Princípio da Mínima Ação envolve menos cálculos, mas invoca algumas ideias de cálculo variacional.
+Prefiro partir do Princípio de D’Alembert, omitindo desenvolvimentos matemáticos muito extensos – que podem ser encontrados nos primeiros capítulos do livro <a href="https://www.amazon.com/Classical-Mechanics-3rd-Herbert-Goldstein/dp/0201657023">“Classical Mechanics”</a>, do Goldstein, e que na prática são “apenas” manipulações envolvendo derivadas parciais.</p>
+
+<p>Registradas essas observações, voltemos ao nascimento da dinâmica.</p>
+
+<h2 id="histórico">histórico</h2>
+
+<p>Em meados de 1687 Isaac Newton apresentou ao mundo uma espécie de tratado sobre o movimento – <a href="https://en.wikipedia.org/wiki/Philosophiæ_Naturalis_Principia_Mathematica">“Philosophiæ Naturalis Principia Mathematica”</a>. No núcleo de tudo se encontravam as três leis que não podem ser derivadas de princípios mais fundamentais e tudo que se move o faz de acordo com elas. É dispensável comentar a importância dos trabalhos de Newton para a compreensão da natureza. Ocorreu que esses trabalhos foram estudados e explorados até que surgiu uma nova maneira de enxergar o movimento.</p>
+
+<p>Por volta de 1788 uma reformulação da mecânica foi organizada e apresentada por Joseph-Louis Lagrange no <a href="https://en.wikipedia.org/wiki/M%C3%A9canique_analytique">“Mécanique Analytique”</a>, dando origem ao chamado <strong>formalismo lagrangiano</strong>. Vale adiantar que apesar do nome, Jean-Baptiste D’Alembert e Leonhard Euler foram tão importantes quanto Lagrange no desenvolvimento da nova interpretação da mecânica.</p>
+
+<h2 id="do-princípio-de-dalembert-ao-formalismo-lagrangiano">do princípio de d’alembert ao formalismo lagrangiano</h2>
+
+<p>Imagine que há caixa com $N$ partículas idênticas e que o movimento de uma delas está sendo analisado.<br />
+Como todas são idênticas, não faz diferença se a análise é feita sobre a partícula $1$ ou sobre a partícula $2$. Então pode-se falar que a análise do movimento é feita sobre a $i$-ésima partícula.<br /></p>
+
+<p><img src="/img/mecanica1_diag-box.png" alt="" /></p>
+
+<p>A segunda lei de Newton, quando reescrita na forma</p>
+
+<script type="math/tex; mode=display">\textbf{F}_i = \frac{d \textbf{p}_i}{dt} = m\frac{d \textbf{v}_i}{dt} = m \textbf{a}_i \label{eqa}</script>
+
+<p>sintetiza a ideia de que <strong>a variação na velocidade de uma partícula $ i$ é proporcional a uma força externa aplicada a ela</strong>.</p>
+
+<p>A ideia de trabalho relaciona essa força externa $F_i$ à distância $dr$ percorrida pela partícula enquanto estiver sob efeito da força, através de</p>
+
+<script type="math/tex; mode=display">W = \int F_i \cdot \textbf{dr}</script>
+
+<p>Historicamente a noção de <strong>trabalho realizado por uma força</strong> esteve presente no estudo da estática, através do princípio do <strong>trabalho virtual</strong>. A ideia é que um sistema composto por $N$ partículas em equilíbrio estático, sujeito a forças externas $\textbf{F}_{i}^{e}$, poderia se mover para diferentes direções $\delta \textbf{r}_i$ – respeitando as restrições impostas pelos “<strong>vínculos de movimento</strong>”, que são os elementos que não fazem parte do sistema, mas que de alguma forma interferem em seu movimento. Por exemplo: uma corrente deslizando pela borda de uma mesa; ao adotar a corrente como sistema, há um vínculo com a mesa que limita seu movimento.</p>
+
+<p>Pelo <strong>Princípio do Trabalho Virtual</strong> a condição de equilíbrio é aquela em que o trabalho das forças externas em todas as direções possíveis soma zero, ou seja</p>
+
+<script type="math/tex; mode=display">\delta W = \sum_{i} \textbf{F}_{i}^{e} \cdot \delta \textbf{r}_i = 0</script>
+
+<p>Antes de prosseguir, para aliviar a notação, vou abandonar a representação de vetores como caracteres em negrito, adicionalmente passo a adotar a seguinte convenção para escrever derivadas no tempo:</p>
+
+<script type="math/tex; mode=display">\frac{df}{dt} \equiv \dot{f} \nonumber</script>
+
+<p>Finalmente, o que D’Alembert fez em <a href="https://books.google.com.br/books?id=5R4OAAAAQAAJ">“Traite de Dynamique”</a> foi usar a ideia do trabalho virtual, típica de problemas de estática, para tentar resolver problemas de dinâmica. Ele fez isso da seguinte forma:</p>
+
+<p>De $\ref{eqa}$</p>
+
+<script type="math/tex; mode=display">F_i = \dot{p}_i \\ \Rightarrow F_i - \dot{p}_i = 0 \nonumber</script>
+
+<p>Então</p>
+
+<script type="math/tex; mode=display">\sum_{i} (F_i - \dot{p}_i) \cdot \delta r_i = 0</script>
+
+<p>uma vez que o termo dentro dos parênteses é zero.</p>
+
+<p>Segundo as leis de Newton a variação de momento é devido a forças resultantes, portanto $F_i$ pode ser decomposta em forças externas $ F_{i}^{e}$ e forças de vínculo $f_{i}$. Então</p>
+
+<script type="math/tex; mode=display">\begin{aligned}
+\sum_{i} [(F_{i}^{e} + f_{i}) - \dot{p}_i] \cdot \delta r_i = 0 \\ 
+\sum_{i} (F_{i}^{e} - \dot{p}_i) \cdot \delta r_i + \sum_{i} (f_i - \dot{p}_i) \cdot \delta r_i = 0
+\end{aligned}</script>
+
+<p>Ao restringir o interesse a sistemas onde as forças de vínculo são nulas – por exemplo: sistema Terra-Sol –, chega-se ao <strong>Princípio de D’Alembert</strong></p>
+
+<script type="math/tex; mode=display">\boxed{ \sum_{i} (F_{i}^{e} - \dot{p}_i) \cdot \delta r_i = 0 } \label{eqb}</script>
+
+<div class="example">
+
+  <h3 id="exemplo">exemplo</h3>
+
+  <p>Não raro os livros-textos usam a $\ref{eqb}$ para a obtenção de resultados mais interessantes do ponto de vista operacional. Contudo, é interessante ver como Princípio de D’Alembert pode ser usado em um problema de estática.</p>
+
+  <p>Como exemplo, considere um sistema de duas massas, conectadas por um fio inextensível e de massa desprezível, ambas sobre meio-cilindro, conforme ilustrado no diagrama a seguir</p>
+
+  <p><img src="/img/mecanica1_cilindro.png" alt="" /></p>
+
+  <p>Surge uma boa oportunidade de retomar a ideia de vínculo: considerando que as massas compõem o sistema, há um vínculo entre o sistema e o meio-cilindro.<br />
+Imagine que a figura é uma fotografia do sistema no instante $t=t_0$. Se o meio-cilindro não existisse, o movimento do sistema nos $t&gt;t_0$ seguintes seria vertical – ele cairia, certo? Mas como há a metade de cilindro lá, nos próximos $t&gt;t_0$ o sistema é obrigado a descrever uma espécie de movimento circular, em torno do centro do meio-cilindro de raio $R$. Na prática <strong>o vínculo impõe restrições ao movimento do sistema</strong>.</p>
+
+  <p>Alguém poderia questionar a palavra “restrição”, já que no exemplo o sistema se moveria apenas na vertical sem o vínculo, e com ele o movimento se dá em ambas as direções, vertical e horizontal – ou seja, pensando no sentido usual da palavra “restrição”, o movimento sem o vínculo parece ser mais restrito, por ser limitado a uma direção apenas.<br />
+Nesse sentido, vale a pena entender a ideia de restrição apenas como uma imposição a qual o movimento do sistema está sujeito. É instrutivo, portanto, pensar que <strong>quando há um vínculo, há uma dependência</strong> – no caso do exemplo, entre os deslocamentos horizontal e vertical. Em outras palavras: o deslocamento horizontal do sistema em torno da superfície do meio-cilindro é uma função do quanto o sistema se deslocou na vertical – e vice-versa.</p>
+
+  <p>Tudo isso observado, resta tentar descobrir qual é a condição de equilíbrio. Segue de $\ref{eqb}$ que</p>
+
+  <script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+\delta W &= \sum_{i} \left[ F_i - m_i \ddot{r_i}\right] \cdot \delta r_i & = 0 \\
+&= \left[ F_1 - m_1 \ddot{r_1}]\cdot \delta r_1 + [F_2 - m_2 \ddot{r_2}\right] \cdot \delta r_2 &= 0
+\end{aligned} %]]></script>
+
+  <p>como, em coordenadas esféricas, a posição $s$ de um ponto na superfície do cilindro é função de um ângulo $\theta$, de modo que</p>
+
+  <script type="math/tex; mode=display">s=R\theta \\ \Rightarrow \ddot{s}=R\ddot{\theta} \nonumber</script>
+
+  <p>e, em particular para as posições das massas $m_1$ e $m_2$, o deslocamento angular de uma implica no deslocamento angular de outra, ou seja</p>
+
+  <script type="math/tex; mode=display">\ddot{\theta}_1=\ddot{\theta}_2 \nonumber</script>
+
+  <p>segue que</p>
+
+  <script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+&= \left[ -m_1 g - m_1 R\ddot{\theta}]\cdot \delta r_1 + [-m_2 g - m_2 R\ddot{\theta}\right] \cdot \delta r_2 = 0
+\end{aligned} %]]></script>
+
+  <p>Esses $ \delta r_i$ são <strong>deslocamentos virtuais</strong> e por definição podem apontar para qualquer direção. Nesse exemplo o sistema pode se mover em duas direções, vertical e horizontal, que vou chamar de $y$ e $x$, respectivamente. Conforme comentado anteriormente, os deslocamentos nessas direções dependem um do outro, então para a analisar o equilíbrio basta ver o que acontece com uma delas. Escolhendo $y$</p>
+
+  <script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+y_i &= Rsin\theta_i \\ 
+\Rightarrow \delta y_i &= R cos\theta_i \delta \theta_i \nonumber 
+\end{aligned} %]]></script>
+
+  <p>não perdendo de vista que, devido ao vínculo entre as duas massas, $ \delta \theta_1 = \delta \theta_2$, segue que</p>
+
+  <script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+&= -m_1 g \cdot \delta y_1 + m_2 g \cdot \delta y_2 - (m_1 cos\theta_1 + m_2 cos\theta_2) R\ddot{\theta} R \cdot \delta \theta = 0\\
+&= -m_1 g R cos\theta_1 \cdot \delta \theta - m_2 g R cos\theta_2 \cdot \delta \theta - (m_1 cos\theta_1 + m_2 cos\theta_2) R\ddot{\theta} R \cdot \delta\theta = 0
+\end{aligned} %]]></script>
+
+  <p>como no equilíbrio a aceleração é nula</p>
+
+  <script type="math/tex; mode=display">\ddot{\theta}=0 \nonumber</script>
+
+  <p>chega-se em</p>
+
+  <script type="math/tex; mode=display">\begin{aligned}
+\delta W = [ -m_1 g R cos\theta_1 - m_2 g R cos\theta_2 ] \cdot \delta \theta = 0
+\end{aligned}</script>
+
+  <p>que tem a mesma forma da $\ref{eqb}$. Para que a igualdade seja válida sempre é necessário que</p>
+
+  <script type="math/tex; mode=display">\boxed{\frac{P_1}{P_2} = -\frac{cos\theta_2}{cos\theta_1}} \nonumber</script>
+
+  <p>que é a condição de equilíbrio do sistema.</p>
+
+  <p>Vale a seguinte observação: embora $\delta\theta=0$ também satisfaça a condição de equilíbrio, deslocamentos nulos impossibilitam o uso da definição de trabalho virtual.</p>
+
+</div>
+
+<h2 id="referências">referências</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@book{9780201657029,
+  Author    = {Herbert Goldstein and Charles P. Poole Jr. and John L. Safko},
+  Title     = {Classical Mechanics (3rd Edition)},
+  Publisher = {Pearson},
+  Year      = {2001},
+  ISBN      = {9780201657029},
+  URL       = {https://www.amazon.com/Classical-Mechanics-3rd-Herbert-Goldstein/dp/0201657023}
+}
+</code></pre></div></div>
+
+:ET

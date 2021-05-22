@@ -1,0 +1,11 @@
+<div style="word-break: break-all;">
+{% if entry.author %}
+{{ entry.author }}.
+{% endif %}
+{% if entry.title %}
+<span id="{{ entry.key }}"><em>{{ entry.title }}</em></span>.
+{% endif %}
+{% if entry.howpublished %}
+<a href="{{ entry.howpublished }}" target="_blank">{{ entry.howpublished }}</a>.
+{% endif %}
+</div>
