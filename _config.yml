@@ -9,6 +9,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 highlighter: rouge
 
 kramdown:
+  use_math: true
   syntax_highlighter: rouge
   parse_block_html: true
 
