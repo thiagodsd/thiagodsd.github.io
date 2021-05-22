@@ -22,10 +22,10 @@ Do ponto de vista estatístico ambas, regressão e classificação, podem ser pe
 Em uma regressão $y$ é uma variável contínua. No problema de classificação $y$ é discreta. Em particular $y \in \\{0, 1\\}$ dá origem a problemas de classificação binária.<br/>
 Fundamentalmente essa função $f$ tal que $f(y \| x,w) \mapsto p$ nunca é completamente conhecida então há alguma liberdade na sua escolha. Desde um ponto de vista probabilístico as funções que compõem a chamada _família exponencial_ recebem atenção especial na tarefa de estimar $p$. Duas escolhas clássicas são
 
-$$\begin{cases}
+$$ \begin{cases}
 p \sim \mathcal{N}(y|w^T \phi(x), \sigma^2) \qquad \text{(regressão)}         \nonumber \\
 p \sim Bern\left( y | \frac{1}{1+e^{-w^T x}} \right) \quad \text{(classificação)} 
-\end{cases}$$
+\end{cases} $$
 
 ## a regressão logística
 
