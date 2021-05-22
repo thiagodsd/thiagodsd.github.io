@@ -9,7 +9,7 @@ tags: aprendizagem-estatistica notas
 
 {% assign b = "bib_memoria-da-maquina" %}
 
-Há algum tempo venho tentando entender de que se trata inteligência artificial. Após os últimos dois anos talvez a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e essas coisas recebem nomes diferentes quando vistas de perspectivas diferentes. E há muitas perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_. {% cite davidmackay2003 stuartrussell2015 -f {{b}} %}
+Há algum tempo venho tentando entender de que se trata inteligência artificial. Após os últimos dois anos talvez a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e essas coisas recebem nomes diferentes quando vistas de perspectivas diferentes. E há muitas perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_. <!-- {% cite davidmackay2003 stuartrussell2015 -f {{b}} %} -->
 
 Como bom sujeito treinado em física, pensei em sistematizar algumas ideias seguindo a estrutura de princípios que combinados e usados com esperteza conduzem a resultados úteis. Porém o zoológico de ideias e técnicas é muito vasto e por isso me pareceu melhor maximizar a entropia e estruturar as coisas em pequenos fragmentos desordenados.
 
@@ -92,7 +92,7 @@ $$\begin{cases}
 $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento}}{\neg\text{evento}} = \frac{p_+}{p_-} =  \frac{\sigma(w^T x)}{1-\sigma(w^T x)} = \frac{\sigma(w^T x)}{\sigma(-w^T x)}  \nonumber$$
 
 <br/>
-<p style="color: red; font-weight: 600;"> a partir daqui os parágrafos são rascunhos e esboços {% cite davidmackay2003 Domingos2012 marmerola_calibration_2018 -f {{b}} %} </p> 
+<p style="color: red; font-weight: 600;"> a partir daqui os parágrafos são rascunhos e esboços <!-- {% cite davidmackay2003 Domingos2012 marmerola_calibration_2018 -f {{b}} %} --> </p> 
 <br/>
 
 Do ponto de vista prático a $\ref{reglog}$ é a equação que caracteriza a regressão logística binária. Para
@@ -321,5 +321,5 @@ plt.xticks([i for i in range(11)]);
 # referências
 
 <div class="tex2jax_ignore">
-{% bibliography -f {{b}} --cited_in_order %}
+<!-- {% bibliography -f {{b}} --cited_in_order %} -->
 </div>
