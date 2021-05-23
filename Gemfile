@@ -6,3 +6,4 @@ gem "jekyll-paginate"
 gem 'jekyll-scholar'
 gem "rouge"
 gem 'jekyll-toc'
+gem 'jekyll-latex'
