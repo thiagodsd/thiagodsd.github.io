@@ -71,7 +71,7 @@ $$ \sigma(x) = \frac{1}{1+e^{-x}} $$
 
 Com respeito ao modelo é interessante observar que os parâmetros de ajuste $w$ não são as probabilidades, senão os logitos. Como $p \sim \sigma(w^T x)$, então 
 
-$$ \boxed{ w^Tx = log \left( \frac{p}{1-p} \right) } \label{reglog}$$
+\begin{equation} \boxed{ w^Tx = log \left( \frac{p}{1-p} \right) } \label{reglog} \end{equation}
 
 
 <br/>
