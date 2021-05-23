@@ -181,7 +181,9 @@ Combinando os resultados anteriores segue a fórmula de Bayes
 
 $$ \boxed{ P(A_i  \mid  B) = \frac{P(A_i \cap B)}{P(B)} = \frac{P(A_i)P(B \mid A_i)}{\sum_j P(A_j)P(B \mid A_j)} } $$
 
-### Exemplo 1 
+<div markdown="1" class="example">
+
+### exemplo 1 
 
 Uma caixa contém duas moedas honestas e uma com duas caras. Lançando uma delas ao acaso e verificando que o resultado foi cara, qual é a probabilidade da moeda lançada ter sido a de duas caras?
 
@@ -195,7 +197,7 @@ a probabilidade deseja é definida por $P(A_2  \mid  B)$. Pela fórmula de Bayes
 
 $$P(A_2  \mid  B) = \frac{P(A_2)P(B \mid A_2)}{P(A_1)P(B \mid A_1) + P(A_2)P(B \mid A_2)} = \frac{\frac{1}{3}1}{\frac{2}{3}\frac{1}{2} + \frac{1}{3}1} = \frac{1}{2}$$
 
-### Exemplo 2
+### exemplo 2
 
 Definindo o estado de saúde de uma pessoa como
 
@@ -227,7 +229,7 @@ então a fórmula de Bayes mostra que
 
 $$P(d=1  \mid  t=1) = \frac{P(t=1 \mid d=1)P(d=1)}{P(t=1 \mid d=1)P(d=1)+P(t=1 \mid d=0)P(d=0)} = 0.16$$
 
-### Exemplo 3
+### exemplo 3
 
 ![](../assets/img/img_urnas.png)
 
@@ -312,7 +314,7 @@ plt.xticks([i for i in range(11)]);
 
 ![](../assets/img/out_0001.png)
 
-
+</div>
 
 <br/><br/>
 
