@@ -71,7 +71,9 @@ $$ \sigma(x) = \frac{1}{1+e^{-x}} $$
 
 Com respeito ao modelo é interessante observar que os parâmetros de ajuste $w$ não são as probabilidades, senão os logitos. Como $p \sim \sigma(w^T x)$, então 
 
-\begin{equation} \boxed{ w^Tx = log \left( \frac{p}{1-p} \right) } \label{reglog} \end{equation}
+\begin{equation} 
+\boxed{ w^Tx = log \left( \frac{p}{1-p} \right) } \label{reglog} 
+\end{equation}
 
 
 <br/>
@@ -91,7 +93,7 @@ $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento
 <p style="color: red; font-weight: 600;"> a partir daqui os parágrafos são rascunhos e esboços </p> 
 <br/>
 
-Do ponto de vista prático a $\ref{reglog}$ é a equação que caracteriza a regressão logística binária. Para
+Do ponto de vista prático a \eqref{reglog} é a equação que caracteriza a regressão logística binária. Para
 
 
 
