@@ -21,7 +21,7 @@
     
     <!-- highlighter -->
     
-    <link rel='stylesheet' href='http://localhost:4000/assets/css/syntax.css' type='text/css'>
+    <link rel='stylesheet' href='/assets/css/syntax.css' type='text/css'>
     
     
     
@@ -30,44 +30,52 @@
     
     
     <!-- latex -->
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "all"
-          }
-        },
         tex2jax: {
-          inlineMath: [ ['$','$'], ['\(', '\)'] ],
-          displayMath: [ ['$$','$$'] ],
-          processEscapes: true,
+          inlineMath: [ ['$$','$$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
         },
-        "HTML-CSS": { linebreaks: { automatic: true } },
-        "SVG": { linebreaks: { automatic: true } }
+        TeX: {
+          Macros: {
+            bra: ["\\langle{#1}|", 1],
+            ket: ["|{#1}\\rangle", 1],
+            braket: ["\\langle{#1}\\rangle", 1],
+            bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+         }
+       }
       });
     </script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
 </head>
 
 <body>
     <header>
-    <h1><a href='http://localhost:4000/'>zustandssumme</a></h1>
+    <h1><a href='/'>zustandssumme</a></h1>
 
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-          }
-        });
-      </script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>     
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$$','$$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+        },
+        TeX: {
+          Macros: {
+            bra: ["\\langle{#1}|", 1],
+            ket: ["|{#1}\\rangle", 1],
+            braket: ["\\langle{#1}\\rangle", 1],
+            bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+         }
+       }
+      });
+    </script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    
 </header>
-<a href='http://localhost:4000/'>início</a> | <a href='http://localhost:4000/archive/'>arquivo</a> | <a href='http://localhost:4000/about/'>sobre</a>
+<a href='/'>início</a> | <a href='/archive/'>arquivo</a> | <a href='/about/'>sobre</a>
 <hr>
 
 

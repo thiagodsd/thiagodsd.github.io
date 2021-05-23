@@ -19,13 +19,13 @@
     <meta name="twitter:description" content = "construção do tensor de faraday a partir de analogias com a forma clássica da força de lorentz">
     
     
-    <meta property="og:image"  content = "http://localhost:4000/img/t_faraday.png">
+    <meta property="og:image"  content = "/img/t_faraday.png">
     
 
     
     <!-- highlighter -->
     
-    <link rel='stylesheet' href='http://localhost:4000/assets/css/syntax.css' type='text/css'>
+    <link rel='stylesheet' href='/assets/css/syntax.css' type='text/css'>
     
     
     
@@ -34,44 +34,52 @@
     
     
     <!-- latex -->
-    <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
-        TeX: {
-          equationNumbers: {
-            autoNumber: "all"
-          }
-        },
         tex2jax: {
-          inlineMath: [ ['$','$'], ['\(', '\)'] ],
-          displayMath: [ ['$$','$$'] ],
-          processEscapes: true,
+          inlineMath: [ ['$$','$$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
         },
-        "HTML-CSS": { linebreaks: { automatic: true } },
-        "SVG": { linebreaks: { automatic: true } }
+        TeX: {
+          Macros: {
+            bra: ["\\langle{#1}|", 1],
+            ket: ["|{#1}\\rangle", 1],
+            braket: ["\\langle{#1}\\rangle", 1],
+            bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+         }
+       }
       });
     </script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
 </head>
 
 <body>
     <header>
-    <h1><a href='http://localhost:4000/'>zustandssumme</a></h1>
+    <h1><a href='/'>zustandssumme</a></h1>
 
     <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-          }
-        });
-      </script>
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>     
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$$','$$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\(","\\)"] ],
+        },
+        TeX: {
+          Macros: {
+            bra: ["\\langle{#1}|", 1],
+            ket: ["|{#1}\\rangle", 1],
+            braket: ["\\langle{#1}\\rangle", 1],
+            bk: ["\\langle{#1}|{#2}|{#3}\\rangle", 3]
+         }
+       }
+      });
+    </script>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    
 </header>
-<a href='http://localhost:4000/'>início</a> | <a href='http://localhost:4000/archive/'>arquivo</a> | <a href='http://localhost:4000/about/'>sobre</a>
+<a href='/'>início</a> | <a href='/archive/'>arquivo</a> | <a href='/about/'>sobre</a>
 <hr>
 
 
@@ -81,11 +89,11 @@
         
 <p>No limite clássico a relação entre presença de campos elétricos e magnéticos e a força por eles exercida sobre um corpo eletricamente carregado é descrita pela equação de <a href="https://en.wikipedia.org/wiki/Lorentz_force">força de Lorentz</a></p>
 
-<script type="math/tex; mode=display">F=q(E+v \times B)</script>
+\[F=q(E+v \times B)\]
 
 <p>Então é possível encontrar uma “versão relativística” da força de Lorentz. Em geral uma forma análoga seria</p>
 
-<script type="math/tex; mode=display">\frac{dp^\mu}{d\tau}=\frac{q}{c}F_\beta^\mu \eta^\beta</script>
+\[\frac{dp^\mu}{d\tau}=\frac{q}{c}F_\beta^\mu \eta^\beta\]
 
 <p>onde</p>
 
@@ -101,33 +109,33 @@
 
 <p>Pode-se escrever o primeiro termo de forma mais conveniente, primeiro aplicando a regra do produto</p>
 
-<script type="math/tex; mode=display">\frac{dp^\alpha}{d\tau}=\frac{d}{d\tau}m\eta^\alpha=\frac{dm}{d\tau}\eta^\alpha + m\frac{d\eta^\alpha}{d\tau}</script>
+\[\frac{dp^\alpha}{d\tau}=\frac{d}{d\tau}m\eta^\alpha=\frac{dm}{d\tau}\eta^\alpha + m\frac{d\eta^\alpha}{d\tau}\]
 
 <p>e daí multiplicando tudo por $\eta_\alpha$</p>
 
-<script type="math/tex; mode=display">\frac{dp^\alpha}{d\tau}\eta_\alpha=\frac{dm}{d\tau}\eta^\alpha\eta_\alpha + m\frac{d\eta^\alpha}{d\tau}\eta_\alpha.</script>
+\[\frac{dp^\alpha}{d\tau}\eta_\alpha=\frac{dm}{d\tau}\eta^\alpha\eta_\alpha + m\frac{d\eta^\alpha}{d\tau}\eta_\alpha.\]
 
 <p>Se a massa é invariante por transformações de Lorentz, então</p>
 
-<script type="math/tex; mode=display">\frac{dp^\alpha}{d\tau}\eta_\alpha=m\frac{d\eta^\alpha}{d\tau}\eta_\alpha.</script>
+\[\frac{dp^\alpha}{d\tau}\eta_\alpha=m\frac{d\eta^\alpha}{d\tau}\eta_\alpha.\]
 
 <p>Por outro lado:</p>
 
-<script type="math/tex; mode=display">\frac{d}{d\tau}\left( \eta^\alpha \eta_\alpha \right)=\frac{d\eta^\alpha}{d\tau}\eta_\alpha + \eta^\alpha\frac{d\eta_\alpha}{d\tau}=2\frac{d\eta^\alpha}{d\tau}\eta_\alpha,</script>
+\[\frac{d}{d\tau}\left( \eta^\alpha \eta_\alpha \right)=\frac{d\eta^\alpha}{d\tau}\eta_\alpha + \eta^\alpha\frac{d\eta_\alpha}{d\tau}=2\frac{d\eta^\alpha}{d\tau}\eta_\alpha,\]
 
 <p>Mas como os objetos estudados são campos eletromagnéticos no vácuo; em todo referencial a velocidade de propagação é igual a $c$, então</p>
 
-<script type="math/tex; mode=display">\eta^2=-c^2 \Rightarrow \frac{d}{d\tau}\eta^2=\frac{d}{d\tau}\left( \eta^\alpha \eta_\alpha \right)=0.</script>
+\[\eta^2=-c^2 \Rightarrow \frac{d}{d\tau}\eta^2=\frac{d}{d\tau}\left( \eta^\alpha \eta_\alpha \right)=0.\]
 
 <p>Juntando tudo:</p>
 
-<script type="math/tex; mode=display">\frac{dp^\mu}{d\tau}\eta_\mu=m\frac{d\eta^\mu}{d\tau}\eta_\mu=\frac{1}{2}\frac{d}{d\tau}\left( \eta^\mu \eta_\mu \right)=0.</script>
+\[\frac{dp^\mu}{d\tau}\eta_\mu=m\frac{d\eta^\mu}{d\tau}\eta_\mu=\frac{1}{2}\frac{d}{d\tau}\left( \eta^\mu \eta_\mu \right)=0.\]
 
 <p>Então, da equação inicial, segue que</p>
 
-<script type="math/tex; mode=display">\frac{dp^\mu}{d\tau}\eta_\mu = \frac{q}{c} \boxed{F_\beta^\mu \eta^\beta \eta_\mu = 0}.</script>
+\[\frac{dp^\mu}{d\tau}\eta_\mu = \frac{q}{c} \boxed{F_\beta^\mu \eta^\beta \eta_\mu = 0}.\]
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 .
 .
 (a ser desenvolvido)
@@ -138,119 +146,114 @@
 
 <p>É possível usar o tensor métrico</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-g_{\mu\nu}
+\[g_{\mu\nu}
 \equiv
 \begin{pmatrix}
--1 & 0 & 0 & 0\\
-0 & 1 & 0 & 0\\
-0 & 0 & 1 & 0\\
-0 & 0 & 0 & 1
-\end{pmatrix} = g^{\mu\nu} %]]></script>
+-1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 1 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{pmatrix} = g^{\mu\nu}\]
 
 <p>reescrever a equação destacada da seguinte forma</p>
 
-<script type="math/tex; mode=display">F^{\beta \mu} \eta_\beta \eta_\mu=0.</script>
+\[F^{\beta \mu} \eta_\beta \eta_\mu=0.\]
 
 <p>Das propriedades dos tensores, algo na forma</p>
 
-<script type="math/tex; mode=display">a_\alpha a_\nu</script>
+\[a_\alpha a_\nu\]
 
 <p>é um tensor chamado simétrico. Então, para essa última igualdade valer sempre é preciso que</p>
 
-<script type="math/tex; mode=display">F^{\beta\mu}</script>
+\[F^{\beta\mu}\]
 
 <p>seja um tensor antissimetrico. A propriedade especial de um tensor antissimétrico é</p>
 
-<script type="math/tex; mode=display">\chi^{ij}=-\chi^{ji}.</script>
+\[\chi^{ij}=-\chi^{ji}.\]
 
 <p>Comparando as forças de Lorentz clássica e tensorial</p>
 
-<script type="math/tex; mode=display">F=q(E+v \times B)</script>
+\[F=q(E+v \times B)\]
 
 <p>e</p>
 
-<script type="math/tex; mode=display">\frac{dp^\mu}{d\tau}=\frac{q}{c}F_\beta^\mu \eta^\beta,</script>
+\[\frac{dp^\mu}{d\tau}=\frac{q}{c}F_\beta^\mu \eta^\beta,\]
 
 <p>resta buscar as condições para que as duas sejam iguais. Para isso é conveniente identificar o produto vetorial como</p>
 
-<script type="math/tex; mode=display">(\nabla \times B)_i = \epsilon_{ijk}\partial_j B_k</script>
+\[(\nabla \times B)_i = \epsilon_{ijk}\partial_j B_k\]
 
 <p>onde $\epsilon^{ijk}$ é o “símbolo de Levi-Civita”.</p>
 
 <p>Começando pelos termos da esquerda:</p>
 
-<script type="math/tex; mode=display">\frac{dp^{i}}{d\tau}=\frac{dp^{i}}{\frac{dt}{\gamma} }=\gamma \frac{dp^{i}}{dt}.</script>
+\[\frac{dp^{i}}{d\tau}=\frac{dp^{i}}{\frac{dt}{\gamma} }=\gamma \frac{dp^{i}}{dt}.\]
 
 <p>Então</p>
 
-<script type="math/tex; mode=display">\frac{dp^i}{dt} = q(E^i + \epsilon_{ijk}v^j B^k) \qquad \text{(classico)}</script>
+\[\frac{dp^i}{dt} = q(E^i + \epsilon_{ijk}v^j B^k) \qquad \text{(classico)}\]
 
-<script type="math/tex; mode=display">\frac{dp^i}{d\tau} = \gamma \frac{dp^{i}}{dt} = \frac{q}{c} \left( F^{i}_{\alpha}\eta^{\alpha} \right) = \frac{q}{c} \left( F^{i}_{0}\eta^{0} + F^{i}_{j}\eta^{j} \right), \qquad \text{(relativistico)}</script>
+\[\frac{dp^i}{d\tau} = \gamma \frac{dp^{i}}{dt} = \frac{q}{c} \left( F^{i}_{\alpha}\eta^{\alpha} \right) = \frac{q}{c} \left( F^{i}_{0}\eta^{0} + F^{i}_{j}\eta^{j} \right), \qquad \text{(relativistico)}\]
 
 <p>daí</p>
 
-<script type="math/tex; mode=display">\not{\gamma} \frac{dp^{i}}{dt} = \frac{q}{\not{c}} F^{i}_{0}\not{\gamma}\not{c} + \frac{q}{c} F^{i}_{j}\not{\gamma}v^{j}.</script>
+\[\not{\gamma} \frac{dp^{i}}{dt} = \frac{q}{\not{c}} F^{i}_{0}\not{\gamma}\not{c} + \frac{q}{c} F^{i}_{j}\not{\gamma}v^{j}.\]
 
 <p>Então comparando as formas clássica e relativística:</p>
 
-<script type="math/tex; mode=display">\boxed{F^{i}_0=E^i}</script>
+\[\boxed{F^{i}_0=E^i}\]
 
 <p>e</p>
 
-<script type="math/tex; mode=display">\boxed{F^{i}_j=c\epsilon^{ijk}B^{k}}.</script>
+\[\boxed{F^{i}_j=c\epsilon^{ijk}B^{k}}.\]
 
 <p>A última equação não está tensorialmente correta. É preciso que os índices “combinem” e nela nota-se que o índice $j$ de $F$ não está na mesma posição que o de $\epsilon$. Novamente usa-se o tensor métrico para “subir os índices”:</p>
 
-<script type="math/tex; mode=display">F^{i0}=F^{i}_{0}g^{00}=-E^i</script>
+\[F^{i0}=F^{i}_{0}g^{00}=-E^i\]
 
 <p>e</p>
 
-<script type="math/tex; mode=display">F^{ij}=F^{i}_{\rho}g^{\rho j}=c\epsilon^{ijk}B^{k} \qquad (j \neq 0)</script>
+\[F^{ij}=F^{i}_{\rho}g^{\rho j}=c\epsilon^{ijk}B^{k} \qquad (j \neq 0)\]
 
 <p>um exemplo para perceber melhor o que ocorre na última igualdade é o seguinte:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{aligned}
-F^{12} &= F^{1}_{2} g^{12}\\
-&= c\epsilon^{12k}B^{k} g^{12}\\
-&=c \not{\epsilon^{121}} B^{1} g^{12} + c \not{\epsilon^{122}} B^{2} g^{12} + c\epsilon^{123}B^{3} g^{12}\\
-&= c\epsilon^{123}B^{3}.
-\end{aligned} %]]></script>
+\[\begin{aligned}
+F^{12} &amp;= F^{1}_{2} g^{12}\\
+&amp;= c\epsilon^{12k}B^{k} g^{12}\\
+&amp;=c \not{\epsilon^{121}} B^{1} g^{12} + c \not{\epsilon^{122}} B^{2} g^{12} + c\epsilon^{123}B^{3} g^{12}\\
+&amp;= c\epsilon^{123}B^{3}.
+\end{aligned}\]
 
 <p>Então, pela antissimetria de $F^{\alpha \beta}$</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-F^{\mu\nu}=\begin{pmatrix}
-0 & \mp F^{10} & \mp F^{20} & \mp F^{30}\\
-\pm F^{10} & 0 & \mp F^{21} & \mp F^{31}\\
-\pm F^{20} & \pm F^{21} & 0 & \mp F^{32}\\
-\pm F^{30} & \pm F^{31} & \pm F^{32} & 0
-\end{pmatrix} %]]></script>
+\[F^{\mu\nu}=\begin{pmatrix}
+0 &amp; \mp F^{10} &amp; \mp F^{20} &amp; \mp F^{30}\\
+\pm F^{10} &amp; 0 &amp; \mp F^{21} &amp; \mp F^{31}\\
+\pm F^{20} &amp; \pm F^{21} &amp; 0 &amp; \mp F^{32}\\
+\pm F^{30} &amp; \pm F^{31} &amp; \pm F^{32} &amp; 0
+\end{pmatrix}\]
 
 <p>Como $F^{i0}=-E^i$, então</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-F^{\mu\nu}=\begin{pmatrix}
-0 & E_x & E_y & E_z\\
--E_x & 0 & \mp F^{21} & \mp F^{31}\\
--E_y & \pm F^{21} & 0 & \mp F^{32}\\
--E_z & \pm F^{31} & \pm F^{32} & 0
-\end{pmatrix} %]]></script>
+\[F^{\mu\nu}=\begin{pmatrix}
+0 &amp; E_x &amp; E_y &amp; E_z\\
+-E_x &amp; 0 &amp; \mp F^{21} &amp; \mp F^{31}\\
+-E_y &amp; \pm F^{21} &amp; 0 &amp; \mp F^{32}\\
+-E_z &amp; \pm F^{31} &amp; \pm F^{32} &amp; 0
+\end{pmatrix}\]
 
 <p>Por $F^{ij}=c\epsilon^{ijk}B^{k}$, tendo em mente as propriedades do símbolo de levi-civita</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\boxed{F^{\mu\nu}=\begin{pmatrix}
-0 & E_x & E_y & E_z\\
--E_x & 0 & cB_z & -cB_y\\
--E_y & -cB_z & 0 & cB_x\\
--E_z & cB_y & -cB_x & 0
-\end{pmatrix} }. %]]></script>
+\[\boxed{F^{\mu\nu}=\begin{pmatrix}
+0 &amp; E_x &amp; E_y &amp; E_z\\
+-E_x &amp; 0 &amp; cB_z &amp; -cB_y\\
+-E_y &amp; -cB_z &amp; 0 &amp; cB_x\\
+-E_z &amp; cB_y &amp; -cB_x &amp; 0
+\end{pmatrix} }.\]
 
 <p>Então se o tensor de campo $F^{\mu\nu}$ tiver a forma da equação anterior, a forma relativística da força de Lorentz é análoga à forma clássica. É possível partir desse ponto e desenvolver alguns outros resultados a fim de reescrever as equações de Maxwell em forma tensorial.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(. . .)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(. . .)
 </code></pre></div></div>
 
         
