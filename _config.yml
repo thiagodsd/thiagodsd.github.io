@@ -35,3 +35,7 @@ scholar:
   bibtex_filters:
     - latex
   bibliography_template: bib
+
+collections:
+  isnebei:
+    output: true

@@ -305,3 +305,15 @@ pre { border-left  : solid gray;
 ol.bibliography { list-style  : none!important; }
 */
 ol.bibliography li { padding-top : 0.75em; }
+
+/* - */
+.sec { vertical-align : middle;
+       display        : inline-block; }
+
+.sec > p { display        : inline-block;
+           margin         : 0px;
+           vertical-align : middle; }
+
+.sec > img { display       : inline-block;
+            margin         : 0px;
+            vertical-align : middle; }

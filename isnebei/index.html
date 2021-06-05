@@ -1,0 +1,21 @@
+---
+layout: default
+title: isnebei
+---
+<!-- 
+original snippet for generating archive page found here:
+https://gist.github.com/tuananh/743255://gist.github.com/tuananh/7432553 
+-->
+<h2>iSNe-BEi</h2>
+
+<img src='/img/zustandssume.png'/>
+
+{% for post in site.isnebei %}
+<section>
+    <div class="sec">
+        <img src='{{ site.url }}{{ post.img }}' /> <p><a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>{{ post.title }}</a>, <small>{{ post.date | date: "%B %-d, %Y" }} &mdash; {{ post.excerpt | strip_html | truncate: 250 }}</small></p>
+    </div>
+</section>
+{% endfor %}
+
+<br/>
