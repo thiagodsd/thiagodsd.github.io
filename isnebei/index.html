@@ -11,11 +11,41 @@ https://gist.github.com/tuananh/743255://gist.github.com/tuananh/7432553
 <img src='/img/zustandssume.png'/>
 
 {% for post in site.isnebei %}
+{% if post.colecao == "isnebei" %}
 <section>
     <div class="sec">
         <img src='{{ site.url }}{{ post.img }}' /> <p><a href='{{ site.url }}{{ post.url }}' target="_blank" title='{{ post.title }}'>{{ post.title }}</a>, <small>{{ post.date | date: "%B %-d, %Y" }} &mdash; {{ post.excerpt | strip_html | truncate: 250 }}</small></p>
     </div>
 </section>
+{% endif %}
 {% endfor %}
 
 <br/>
+
+<h2>outras histórias</h2>
+
+{% for post in site.isnebei %}
+{% if post.colecao == "outras" %}
+<section>
+    <div class="sec">
+        <img src='{{ site.url }}{{ post.img }}' /> <p><a href='{{ site.url }}{{ post.url }}' target="_blank" title='{{ post.title }}'>{{ post.title }}</a>, <small>{{ post.date | date: "%B %-d, %Y" }} &mdash; {{ post.excerpt | strip_html | truncate: 250 }}</small></p>
+    </div>
+</section>
+{% endif %}
+{% endfor %}
+
+<br/>
+
+<!-- <h2>tiras</h2>
+
+{% for post in site.isnebei %}
+{% if post.colecao == "tira" %}
+<section>
+    <div class="sec">
+        <img src='{{ site.url }}{{ post.img }}' /> <p><a href='{{ site.url }}{{ post.url }}' target="_blank" title='{{ post.title }}'>{{ post.title }}</a>, <small>{{ post.date | date: "%B %-d, %Y" }} &mdash; {{ post.excerpt | strip_html | truncate: 250 }}</small></p>
+    </div>
+</section>
+{% endif %}
+{% endfor %}
+
+<br/> -->
