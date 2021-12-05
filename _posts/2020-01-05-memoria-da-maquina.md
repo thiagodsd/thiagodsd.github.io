@@ -7,11 +7,13 @@ date:   2020-01-05 14:43:00 +0300
 tags: aprendizagem-estatistica notas
 ---
 
+{% comment %}
 Há algum tempo venho tentando entender de que se trata inteligência artificial. Até agora a única coisa razoavelmente clara é que essa entidade _Inteligência Artificial_ tem um monte de coisa dentro e cada uma dessas coisas recebe nomes diferentes quando vista de perspectivas diferentes. Muitas técnicas podem ser obtidas e entendidas a partir de múltiplos frameworks, seja _teoria da informação_, _otimização_, _estatística_, _teoria dos jogos_ ou mesmo _física_.
 
 Como bom sujeito treinado em física, pensei em sistematizar algumas ideias seguindo a estrutura de princípios que combinados e usados com esperteza conduzem a resultados úteis. Porém o zoológico de ideias e técnicas é muito vasto e por isso me pareceu melhor maximizar a entropia e estruturar as coisas em pequenos fragmentos desordenados.
 
 <br/><br/>
+{% endcomment %}
 
 ## o hello world do raciocínio probabilístico
 
