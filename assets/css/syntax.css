@@ -317,3 +317,19 @@ ol.bibliography li { padding-top : 0.75em; }
 .sec > img { display       : inline-block;
             margin         : 0px;
             vertical-align : middle; }
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
