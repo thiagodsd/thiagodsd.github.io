@@ -4,7 +4,9 @@ layout: galeano
 
 <h1>{{ page.title }}{{ page.shortUrl }}</h1>
 
-{{ content | toc }}
+{% include toc.html html=content h_max=3 class="section-nav" %}
+
+{{ content }}
 
 <small>tags: <i>{{ page.tags | join: ", "}}</i></small>
         
