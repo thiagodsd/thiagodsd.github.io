@@ -48,22 +48,30 @@
 <hr>
 
   <h1>mecânica 1</h1>
-<small>tags: <i>física, notas</i></small>
-<div class='separator'></div>
-        
 
-<h2 id="histórico">histórico</h2>
+<ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#histórico">histórico</a></li>
+<li class="toc-entry toc-h2"><a href="#do-princípio-de-dalembert-ao-formalismo-lagrangiano">do princípio de d’alembert ao formalismo lagrangiano</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#exemplo">exemplo</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#referências">referências</a></li>
+</ul>
+<h2 id="histórico">
+<a class="anchor" href="#hist%C3%B3rico" aria-hidden="true"><span class="octicon octicon-link"></span></a>histórico</h2>
 
-<p>Em meados de 1687 Isaac Newton apresentou ao mundo uma espécie de tratado sobre o movimento – <a href="https://en.wikipedia.org/wiki/Philosophiæ_Naturalis_Principia_Mathematica">“Philosophiæ Naturalis Principia Mathematica”</a>. No núcleo de tudo se encontravam as três leis que não podem ser derivadas de princípios mais fundamentais e tudo que se move o faz de acordo com elas. É dispensável comentar a importância dos trabalhos de Newton para a compreensão da natureza. Ocorreu que esses trabalhos foram estudados e explorados até que surgiu uma nova maneira de enxergar o movimento.</p>
+<p>Em meados de 1687 Isaac Newton apresentou ao mundo uma espécie de tratado sobre o movimento – <a href="https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica">“Philosophiæ Naturalis Principia Mathematica”</a>. No núcleo de tudo se encontravam as três leis que não podem ser derivadas de princípios mais fundamentais e tudo que se move o faz de acordo com elas. É dispensável comentar a importância dos trabalhos de Newton para a compreensão da natureza. Ocorreu que esses trabalhos foram estudados e explorados até que surgiu uma nova maneira de enxergar o movimento.</p>
 
 <p>Por volta de 1788 uma reformulação da mecânica foi organizada e apresentada por Joseph-Louis Lagrange no <a href="https://en.wikipedia.org/wiki/M%C3%A9canique_analytique">“Mécanique Analytique”</a>, dando origem ao chamado <strong>formalismo lagrangiano</strong>. Vale adiantar que apesar do nome, Jean-Baptiste D’Alembert e Leonhard Euler foram tão importantes quanto Lagrange no desenvolvimento da nova interpretação da mecânica.</p>
 
-<h2 id="do-princípio-de-dalembert-ao-formalismo-lagrangiano">do princípio de d’alembert ao formalismo lagrangiano</h2>
+<h2 id="do-princípio-de-dalembert-ao-formalismo-lagrangiano">
+<a class="anchor" href="#do-princ%C3%ADpio-de-dalembert-ao-formalismo-lagrangiano" aria-hidden="true"><span class="octicon octicon-link"></span></a>do princípio de d’alembert ao formalismo lagrangiano</h2>
 
-<p>Imagine que há caixa com $N$ partículas idênticas e que o movimento de uma delas está sendo analisado.<br />
-Como todas são idênticas, não faz diferença se a análise é feita sobre a partícula $1$ ou sobre a partícula $2$. Então pode-se falar que a análise do movimento é feita sobre a $i$-ésima partícula.<br /></p>
+<p>Imagine que há caixa com $N$ partículas idênticas e que o movimento de uma delas está sendo analisado.<br>
+Como todas são idênticas, não faz diferença se a análise é feita sobre a partícula $1$ ou sobre a partícula $2$. Então pode-se falar que a análise do movimento é feita sobre a $i$-ésima partícula.<br></p>
 
-<p><img src="/img/mecanica1_diag-box.png" alt="" /></p>
+<p><img src="/img/mecanica1_diag-box.png" alt=""></p>
 
 <p>A segunda lei de Newton, quando reescrita na forma</p>
 
@@ -110,18 +118,19 @@ Como todas são idênticas, não faz diferença se a análise é feita sobre a p
 
 <div class="example">
 
-  <h3 id="exemplo">exemplo</h3>
+  <h3 id="exemplo">
+<a class="anchor" href="#exemplo" aria-hidden="true"><span class="octicon octicon-link"></span></a>exemplo</h3>
 
   <p>Não raro os livros-textos usam a $\ref{eqb}$ para a obtenção de resultados mais interessantes do ponto de vista operacional. Contudo, é interessante ver como Princípio de D’Alembert pode ser usado em um problema de estática.</p>
 
   <p>Como exemplo, considere um sistema de duas massas, conectadas por um fio inextensível e de massa desprezível, ambas sobre meio-cilindro, conforme ilustrado no diagrama a seguir</p>
 
-  <p><img src="/img/mecanica1_cilindro.png" alt="" /></p>
+  <p><img src="/img/mecanica1_cilindro.png" alt=""></p>
 
-  <p>Surge uma boa oportunidade de retomar a ideia de vínculo: considerando que as massas compõem o sistema, há um vínculo entre o sistema e o meio-cilindro.<br />
+  <p>Surge uma boa oportunidade de retomar a ideia de vínculo: considerando que as massas compõem o sistema, há um vínculo entre o sistema e o meio-cilindro.<br>
 Imagine que a figura é uma fotografia do sistema no instante $t=t_0$. Se o meio-cilindro não existisse, o movimento do sistema nos $t&gt;t_0$ seguintes seria vertical – ele cairia, certo? Mas como há a metade de cilindro lá, nos próximos $t&gt;t_0$ o sistema é obrigado a descrever uma espécie de movimento circular, em torno do centro do meio-cilindro de raio $R$. Na prática <strong>o vínculo impõe restrições ao movimento do sistema</strong>.</p>
 
-  <p>Alguém poderia questionar a palavra “restrição”, já que no exemplo o sistema se moveria apenas na vertical sem o vínculo, e com ele o movimento se dá em ambas as direções, vertical e horizontal – ou seja, pensando no sentido usual da palavra “restrição”, o movimento sem o vínculo parece ser mais restrito, por ser limitado a uma direção apenas.<br />
+  <p>Alguém poderia questionar a palavra “restrição”, já que no exemplo o sistema se moveria apenas na vertical sem o vínculo, e com ele o movimento se dá em ambas as direções, vertical e horizontal – ou seja, pensando no sentido usual da palavra “restrição”, o movimento sem o vínculo parece ser mais restrito, por ser limitado a uma direção apenas.<br>
 Nesse sentido, vale a pena entender a ideia de restrição apenas como uma imposição a qual o movimento do sistema está sujeito. É instrutivo, portanto, pensar que <strong>quando há um vínculo, há uma dependência</strong> – no caso do exemplo, entre os deslocamentos horizontal e vertical. Em outras palavras: o deslocamento horizontal do sistema em torno da superfície do meio-cilindro é uma função do quanto o sistema se deslocou na vertical – e vice-versa.</p>
 
   <p>Tudo isso observado, resta tentar descobrir qual é a condição de equilíbrio. Segue de $\ref{eqb}$ que</p>
@@ -179,7 +188,8 @@ y_i &amp;= Rsin\theta_i \\
 
 </div>
 
-<h2 id="referências">referências</h2>
+<h2 id="referências">
+<a class="anchor" href="#refer%C3%AAncias" aria-hidden="true"><span class="octicon octicon-link"></span></a>referências</h2>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@book{9780201657029,
   Author    = {Herbert Goldstein and Charles P. Poole Jr. and John L. Safko},
@@ -192,6 +202,8 @@ y_i &amp;= Rsin\theta_i \\
 </code></pre></div></div>
 
 
+
+<small>tags: <i>física, notas</i></small>
         
 
   <hr>

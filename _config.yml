@@ -17,6 +17,13 @@ plugins:
   - jekyll-paginate
   - jekyll/scholar
   - jekyll-toc
+
+
+toc:
+  min_level: 2
+  max_level: 3
+  ordered_list: false
+
 paginate: 10
 paginate_path: /page-:num
 

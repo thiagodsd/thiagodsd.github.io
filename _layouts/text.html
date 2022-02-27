@@ -1,11 +1,21 @@
 ---
 layout: galeano
 ---
+
 <h1>{{ page.title }}{{ page.shortUrl }}</h1>
-<small>tags: <i>{{ page.tags | join: ", "}}</i></small>
-<div class='separator'></div>
-        
-{{ content | toc }}
+
+<!-- <div class='separator'><br/></div>         -->
+<!-- {{ content | toc }} -->
+
+<div>
+    <div id="table-of-contents">
+        {% toc %}
+    </div>
+    <div id="markdown-content">
+        {{ content }}
+    </div>
+    <small>tags: <i>{{ page.tags | join: ", "}}</i></small>
+</div>
         
 {% if site.disqus-id %} {% include comments.html %} {% endif %}
 

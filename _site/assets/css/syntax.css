@@ -333,3 +333,8 @@ ol.bibliography li { padding-top : 0.75em; }
   flex: 33.33%;
   padding: 5px;
 }
+
+.section-nav {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}

@@ -5,6 +5,7 @@ description: estudo do espaço de configurações evoluindo no tempo
 img: /img/t_lagrangiana-em-movimento.png
 date:   2019-10-11 00:02:51 +0300
 tags: física visualizacao anotacoes
+toc: true
 ---
 
 Aqui há algumas anotações das minhas tentativas de enxergar o espaço de configurações evoluindo no tempo. Por serem anotações, em contraste com as páginas de "notas", abaixo não há muitos comentários sobre teoria ou programação, apenas pontos importantes, referências e códigos.

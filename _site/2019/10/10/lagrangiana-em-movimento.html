@@ -48,27 +48,32 @@
 <hr>
 
   <h1>lagrangiana em movimento</h1>
-<small>tags: <i>física, visualizacao, anotacoes</i></small>
-<div class='separator'></div>
-        
-<p>Aqui há algumas anotações das minhas tentativas de enxergar o espaço de configurações evoluindo no tempo. Por serem anotações, em contraste com as páginas de “notas”, abaixo não há muitos comentários sobre teoria ou programação, apenas pontos importantes, referências e códigos.</p>
 
-<h2 id="o-sistema">o sistema</h2>
+<ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#o-sistema">o sistema</a></li>
+<li class="toc-entry toc-h2"><a href="#espaço-de-coordenadas-no-tempo">espaço de coordenadas no tempo</a></li>
+<li class="toc-entry toc-h2"><a href="#lagrangiana-no-tempo">lagrangiana no tempo</a></li>
+</ul><p>Aqui há algumas anotações das minhas tentativas de enxergar o espaço de configurações evoluindo no tempo. Por serem anotações, em contraste com as páginas de “notas”, abaixo não há muitos comentários sobre teoria ou programação, apenas pontos importantes, referências e códigos.</p>
+
+<h2 id="o-sistema">
+<a class="anchor" href="#o-sistema" aria-hidden="true"><span class="octicon octicon-link"></span></a>o sistema</h2>
 
 <p>Abaixo o diagrama de um sistema que gosto muito: uma espécie de pêndulo vertical com base móvel obedecendo a um movimento periódico.</p>
 
-<p><img src="/img/lagrangiana-em-movimento_diagrama-mec1-barra.png" alt="diagrama-mec1-barra" /></p>
+<p><img src="/img/lagrangiana-em-movimento_diagrama-mec1-barra.png" alt="diagrama-mec1-barra"></p>
 
 <p>Na primeira vez que vi esse sistema o ângulo $\theta$ que a haste faz com a horizontal estava restrito ao intervalo de $-\frac{\pi}{2}$ a $\frac{\pi}{2}$, mas eu gosto da alternativa em que não existe essa barra vertical e o movimento é livre. Nesse caso o movimento do sistema seria mais ou menos assim:</p>
 
-<p><img src="/img/lagrangiana-em-movimento_diagrama-mec1-barra_opt.gif" alt="gif lagrangiana-em-movimento_diagrama-mec1-barra" /></p>
+<p><img src="/img/lagrangiana-em-movimento_diagrama-mec1-barra_opt.gif" alt="gif lagrangiana-em-movimento_diagrama-mec1-barra"></p>
 
-<h2 id="espaço-de-coordenadas-no-tempo">espaço de coordenadas no tempo</h2>
+<h2 id="espaço-de-coordenadas-no-tempo">
+<a class="anchor" href="#espa%C3%A7o-de-coordenadas-no-tempo" aria-hidden="true"><span class="octicon octicon-link"></span></a>espaço de coordenadas no tempo</h2>
 
 \[\begin{cases} x = R cos \theta \\ z = a sin (\omega t) = a sin (\omega t) + R sin \theta \end{cases}\]
 
 <div style="height: 13em; overflow: scroll;">
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+  <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>    <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span>                <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="n">animation</span>
@@ -130,14 +135,16 @@
 </code></pre></div>  </div>
 </div>
 
-<p><img src="/img/lagrangiana-em-movimento_plot_configuration_space_opt.gif" alt="gif plot_configuration_space" /></p>
+<p><img src="/img/lagrangiana-em-movimento_plot_configuration_space_opt.gif" alt="gif plot_configuration_space"></p>
 
-<h2 id="lagrangiana-no-tempo">lagrangiana no tempo</h2>
+<h2 id="lagrangiana-no-tempo">
+<a class="anchor" href="#lagrangiana-no-tempo" aria-hidden="true"><span class="octicon octicon-link"></span></a>lagrangiana no tempo</h2>
 
 \[\mathcal{L} = \frac{1}{2} m \left( R^2 \dot{\theta}^2 + a^2 \omega^2 cos^2 (\omega t) + 2 R a \omega cos (\omega t)cos \theta \dot{\theta} \right) - m g ( a sin (\omega t) + R sin \theta )\]
 
 <div style="height: 13em; overflow: scroll;">
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib</span>
+  <div class="language-python highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span>    <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span>                <span class="k">as</span> <span class="n">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="n">animation</span>
@@ -209,8 +216,10 @@
 </code></pre></div>  </div>
 </div>
 
-<p><img src="/img/lagrangiana-em-movimento_plot_lagrangian_opt.gif" alt="gif lagrangiana-em-movimento_plot_lagrangian_opt" /></p>
+<p><img src="/img/lagrangiana-em-movimento_plot_lagrangian_opt.gif" alt="gif lagrangiana-em-movimento_plot_lagrangian_opt"></p>
 
+
+<small>tags: <i>física, visualizacao, anotacoes</i></small>
         
 
   <hr>
