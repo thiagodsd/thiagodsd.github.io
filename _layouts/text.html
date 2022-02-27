@@ -7,15 +7,9 @@ layout: galeano
 <!-- <div class='separator'><br/></div>         -->
 <!-- {{ content | toc }} -->
 
-<div>
-    <div id="table-of-contents">
-        {% toc %}
-    </div>
-    <div id="markdown-content">
-        {{ content }}
-    </div>
-    <small>tags: <i>{{ page.tags | join: ", "}}</i></small>
-</div>
+{{ content | toc }}
+
+<small>tags: <i>{{ page.tags | join: ", "}}</i></small>
         
 {% if site.disqus-id %} {% include comments.html %} {% endif %}
 
