@@ -278,6 +278,7 @@ if __name__ == '__main__':
 <br/>
 
 ```html
+{% raw %}
 <form class="" action="{{ url_for('form_input') }}" method="POST">
     <label for="metro_from">da estação </label> <input type="text" name="metro_from" id='metro_from'> 
     <label for="metro_to">para a estação </label> <input type="text" name="metro_to" id='metro_to'> 
@@ -285,14 +286,13 @@ if __name__ == '__main__':
 </form>
 <br/>
 <div class="resultado">
-    {% raw %}
     {% if result %}
         {% for value in result %}
             {{ value }} - 
         {% endfor %}
     {% endif %}
-    {% endraw %}
 </div>
+{% endraw %}
 ```
 
 #### ec2
@@ -309,9 +309,14 @@ kedro docker init
 kedro docker build
 ```
 
+<br/>
+
 ```
 !data/01_raw/metrosp_stations.csv
 ```
+
+<br/>
+
 
 ```dockerfile
 ARG BASE_IMAGE=python:3.8-slim
@@ -326,6 +331,9 @@ ADD . /app
 EXPOSE 80
 ENTRYPOINT ["python3", "app.py"]
 ```
+
+<br/>
+
 
 ```sh
 clone -b release/2.0.0 https://github.com/thiagodsd/metro-sp-mdp.git

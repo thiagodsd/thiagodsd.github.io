@@ -274,31 +274,43 @@
 .language-plaintext > .highlight {
   background-color: #eeeeee;
   padding-left : 1em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .language-sh  {
   border-left: solid #bebebe;
   padding-left : 1em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .language-html  {
   padding-left : 1em;
   background-color: #eeeeee;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .language-py  {
   padding-left : 1em;
   background-color: #eeeeee;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .language-yml  {
   padding-left : 1em;
   background-color: #eeeeee;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .language-dockerfile  {
   padding-left : 1em;
   background-color: #eeeeee;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 p > .language-plaintext  {
