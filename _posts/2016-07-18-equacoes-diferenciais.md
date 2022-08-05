@@ -15,13 +15,15 @@ toc: true
 
 **Disclaimer**<br/>Essas anotações são excertos de um texto sobre equações diferenciais escrito em 2016 e publicado para fins de divulgação científica. Agora, 6 anos depois eu não tenho ideia do que eu queria desenvolver ou concluir com ele. Vão-se os conhecimentos, ficam os registros.
 
+<br/><br/>
+
 ## equação diferencial exata
 
-Uma equação diferencial da forma
+_Uma equação diferencial da forma_
 
 $$ I(x,y)dx + J(x,y)dy=0$$
 
-é exata se existe uma função $\phi(x,y)$ -- chamada função "potencial" -- tal que
+_é exata se existe uma função $\phi(x,y)$ -- chamada função "potencial" -- tal que_
 
 $$
 \begin{aligned}
@@ -34,17 +36,17 @@ Lembrando que, dada uma função $z(x,y)$, o [Teorema de Schwarz](https://pt.wik
 
 $$ \frac{\partial^2 z}{\partial x \partial y}=\frac{\partial^2 z}{\partial y \partial x},$$
 
-segue que, se a equação diferencial inicial é exata, então
+_segue que, se a equação diferencial inicial é exata, então_
 
 $$ \frac{\partial I}{\partial y}=\frac{\partial J}{\partial x}.$$
 
 <div markdown="1" class="example">
 
-Para ilustrar considere
+_Para ilustrar, considere_
 
 $$ \left(\frac{x+y}{1+y^2}\right)y'=-(x+arctan(y)),$$
 
-e observe que
+_e observe que_
 
 $$
 \begin{aligned}
@@ -54,7 +56,7 @@ $$
 \end{aligned}
 $$
 
-Lembrando que qualquer equação diferencial linear de primeira ordem pode ser escrita assim, o que não implica que ela é exata. Nesse caso é preciso verificar. Veja que
+_Lembrando que qualquer equação diferencial linear de primeira ordem pode ser escrita assim, o que não implica que ela é exata. Nesse caso é preciso verificar. Veja que_
 
 $$
 \begin{aligned}
@@ -63,46 +65,43 @@ J(x,y)&=\left(\frac{x+y}{1+y^2}\right).
 \end{aligned}
 $$
 
-Então
+_Então_
 
 $$ \frac{\partial I}{\partial y}=\frac{1}{1+y^2}=\frac{\partial J}{\partial x}$$
 
-e a função
+_e a função_
 
 $$ \phi(x,y)=\frac{x^2}{2}+x\,arctan(y)+\frac{1}{2}ln(1+y^2)$$
 
-satisfaz a condição necessária para ser função potencial da equação desse exemplo.
+_satisfaz a condição necessária para ser função potencial da equação desse exemplo._
 
 </div>
 
-É conveniente conhecer esse tipo de equação diferencial porque algumas de suas propriedades são usadas no estudo das soluções de equações diferenciais lineares.
 
 ## equação diferencial linear de primeira ordem
 
-Além da equação diferencial linear
+_Além do fato da equação diferencial linear_
 
 $$ y' + p(x)\, y=q(x)$$
 
-possuir solução geral, ela aparece em dois métodos de resolução, então seria legal saber como encontrar soluções pra ela. Pra isso é conveniente escrevê-la da seguinte forma
+_possuir solução geral, ela aparece em dois métodos de resolução, então seria legal saber como encontrar soluções pra ela. Pra isso é conveniente escrevê-la da seguinte forma_
 
-$$ dy + [p(x)y-q(x)]dx=0.$$
+$$ dy + \left[ p(x)y-q(x) \right]dx=0.$$
 
-Apesar de ser tentador classificar a equação acima como exata, ninguém sabe a princípio se é ou não.
-A ideia por trás da obtenção da solução geral é "forçá-la" a ser exata. Para isso se multiplica uma função $$ v(x)$$ em ambos os lados da igualdade
+_Apesar de ser tentador classificar a equação acima como exata, não é possível saber, a princípio, se é ou não.
+A ideia por trás da obtenção da solução geral é "forçá-la" a ser exata. Para isso multiplica-se uma função $v(x)$ em ambos os lados da igualdade_
 
-$$ v(x)[p(x)y - q(x)]dx + v(x)dy=0$$
+$$ v(x)\left[ p(x)y - q(x) \right]dx + v(x)dy=0$$
 
-e se procura as condições que tornam a equação exata.
-
-Dessa equação se obtém que
+_e procura-se as condições que tornam a equação exata. Dessa equação se obtém que_
 
 $$ \int v(x)p(x)ydx - \int v(x)q(x)dx + \int v(x)dy=C_1,$$
 
-Mas se a equação anterior for exata, vai ser verdade que
+_Mas se a equação anterior for exata, vai ser verdade que_
 
-$$ \frac{\partial}{\partial y}[v(x)p(x)y - v(x)q(x)]=\frac{\partial}{\partial x}v(x)$$
+$$ \frac{\partial}{\partial y}\left[ v(x)p(x)y - v(x)q(x) \right]=\frac{\partial}{\partial x}v(x)$$
 
-Ou seja
+_Ou seja_
 
 $$
 \begin{aligned}
@@ -111,11 +110,11 @@ p\,dx &= \frac{dv}{v}
 \end{aligned}
 $$
 
-Que leva a
+_Que leva à_
 
 $$ v(x)=e^{( \int p(x)\,dx )}.$$
 
-Assim
+_Assim_
 
 $$
 \begin{aligned}
@@ -127,16 +126,19 @@ y\,e^{( \int p(x)\,dx )} - \int e^{( \int p(x)\,dx )}q(x)dx&=K
 \end{aligned}
 $$
 
-Então
+_Então_ 
 
-$$ y(x) = K\,e^{ -\int p(x)\,dx} + e^{ -\int p(x)\,dx}\int e^{ \int p(x)\,dx }q(x)dx$$
+$$\boxed{ y(x) = K\,e^{ -\int p(x)\,dx} + e^{ -\int p(x)\,dx}\int e^{ \int p(x)\,dx }q(x)dx }$$
 
-é solução da equação diferencial linear.
-Para ilustrar considere
+_é solução da equação diferencial linear._
+
+<div markdown="1" class="example">
+
+_Para ilustrar, considere_
 
 $$ y'-y=e^{2x}.$$
 
-Nesse caso
+_Nesse caso_
 
 $$
 \begin{aligned}
@@ -145,7 +147,7 @@ q(x) &= e^{2x},
 \end{aligned}
 $$
 
-Então
+_Então_
 
 $$
 \begin{aligned}
@@ -156,21 +158,23 @@ y(x) &= K\,e^{x} + e^{2x}\\
 \end{aligned}
 $$
 
-é solução da equação diferencial inicial.
-A essa altura é interessante citar a ideia de operador diferencial.
+_é solução da equação diferencial inicial._
 
-operador diferencial
+</div>
 
-A maneira como eu entendo operadores é a seguinte: operadores são coisas que você gruda em outras coisas para aplicar alguma regra nelas.
-Um bom exemplo de operador é o nabla cujo símbolo é $$ \nabla$$. A grosso modo pode-se dizer que, no $$ R^3$$
+_Nesse ponto, é interessante citar a ideia de operador diferencial._
+
+## operador diferencial
+
+_A maneira como eu entendo operadores é a seguinte: operadores são coisas que você gruda em outras coisas para aplicar alguma regra nelas. Um bom exemplo de operador é o gradiente, $\nabla$, que a grosso modo, no $R^3$, tem a seguinte cara_
 
 $$ \nabla \equiv \left( \frac{\partial}{\partial x}\hat{x} + \frac{\partial}{\partial y}\hat{y} + \frac{\partial}{\partial z}\hat{z}\right).$$
 
-Assim, sendo a função
+_Assim, dada a função_
 
 $$ f(x,y,z)=cos(xy) + 5z^2x$$
 
-pode-se aplicar o operador através de uma multiplicação, por exemplo
+_pode-se aplicar esse operador através de uma espécie de multiplicação, por exemplo_
 
 $$
 \begin{aligned}
@@ -181,47 +185,51 @@ $$
 \end{aligned}
 $$
 
-obtendo-se o gradiente de $$ f$$.
-Observa-se aí que o gradiente de uma função escalar é uma função vetorial. É possível "combinar" o nabla à funções escalares e vetoriais de outras formas de modo a se obter coisas além do gradiente, como por exemplo, o divergente, o rotacional e o laplaciano.
+_obtendo-se o gradiente de $f$._
 
-Fica claro então que basta alguma regra associada a algum tipo de objeto matemático para se criar um operador. Além disso essa regra pode ser complicada de se escrever, então do ponto de vista estético o uso de operadores tende a deixar as coisas mais claras.
+_É interessante notar que o gradiente aplicado a uma função escalar resulta em uma função vetorial. É possível "combinar" o nabla $\nabla$ à funções escalares e vetoriais de outras formas de modo a obter outras coisas além do gradiente, como, por exemplo, o divergente, o rotacional e o laplaciano._
 
-Dito isso tudo segue uma definição, digamos, do tal operador diferencial:
+_Fica claro então que basta alguma regra associada a algum tipo de objeto matemático para se criar um operador. Além disso essa regra pode ser complicada de se escrever, então do ponto de vista estético o uso de operadores tende a deixar as coisas mais claras._
+
+_Dito tudo isso, segue uma "definição", digamos, do tal operador diferencial:_
 
 $$ D^n_t \equiv \frac{d^n}{dt^n}.$$
 
-Então quando aplico o operador diferencial $$ D^n_t$$ em alguma função escalar, obtenho a n-ésima derivada com respeito à variável t dessa função.
-Como tudo até aqui tem sido dependente da variável x é conveniente simplificar a coisa para:
+_Então a aplicação do operador diferencial $D^n_t$ em uma função escalar resulta na n-ésima derivada da função com respeito à variável $t$._
 
-$$ D^n \equiv \frac{d^n}{dx^n}.$$
+_Como tudo até aqui tem sido dependente da variável $x$, é conveniente simplificar a coisa para_
 
-Então na prática é o seguinte:
+$$D^n \equiv \frac{d^n}{dx^n}.$$
+
+_Então na prática é o seguinte:_
 
 $$ D^ny \equiv \frac{d^ny}{dx^n},$$
 
-em outras palavras: o produto de um operador elevado à $$ n$$ por uma função se obtém a n-ésima derivada dessa função. Então ao invés de se escrever
+_Então algo como_
 
 $$ \frac{d^6y}{dx^6}+2\frac{d^5y}{dx^5}-2\frac{d^3}{dx^3}-\frac{dy}{dx}+22y=0$$
 
-escreve-se
+_passa a ser escrito como_
 
 $$ (D^6+2D^5-2D^3-D+22)y=0.$$
 
-Eventualmente pode ser interessante definir $$ D^6+2D^5-D^3-D+22$$ como um $$ L$$ de modo que se possa escrever a equação acima como
+_Eventualmente pode ser interessante definir $D^6+2D^5-D^3-D+22$ como um certo $L$ de modo que se possa escrever a equação acima como_
 
-$$ L(y)=0.$$
+$L(y)=0.$
 
-Então, pra concluir essa primeira parte, poderia-se definir uma $$ L$$ tal que
+_Então, pra concluir essa primeira parte, seria possível definir $L$ tal que_
 
-$$ L=D-1$$
+$$L=D-1$$
 
-e aí reescrever aquele exemplo da equação diferencial linear como
+_e aí reescrever aquele exemplo da equação diferencial linear como_
 
 $$ L(y)=e^{2x}.$$
 
-Segue agora o primeiro método pra resolver alguma coisa mesmo, por enquanto tudo não passou de um longo prelúdio.
+<br/>
+<p style="color: red; font-weight: light;"> <i>(não tenho ideia do que esse final anticlimático deveria significar)</i></p> 
+<br/>
 
-equação diferencial de segunda ordem
+## equação diferencial de segunda ordem
 
 A equação diferencial de segunda ordem homogênea
 
