@@ -366,7 +366,7 @@ _A união de tudo que foi dito até agora leva à solução da equação diferen
 
 $$y''+ay'+by=0$$
 
-que tem a forma
+_que tem a forma_
 
 $$ y=e^{-\frac{a}{2}x}\left( C_1 u_1 + C_2 u_2\right)$$
 
