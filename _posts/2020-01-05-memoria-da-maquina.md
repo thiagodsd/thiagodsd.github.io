@@ -94,12 +94,18 @@ $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento
 <div class='two-column-row'>
 <div class='two-column-column'>
 <div class='left-column'>
-Some Text in Column One
+
+$\delta\mathcal{S} = 0$
+
 </div>
 </div>
 <div class='two-column-column'>
 <div class='right-column'>
-Some Text in Column Two
+
+```python
+# codigo
+```
+
 </div>
 </div>
 </div>
