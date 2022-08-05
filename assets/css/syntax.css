@@ -345,7 +345,12 @@ img { width         : 50%;
 table { margin-left  : auto; 
         margin-right : auto; }
 
-.example { margin-left : 13%; }
+.example { 
+  /*margin-left : 13%; */
+  border: 1px solid #bebebe;
+  padding: 2em;
+
+}
 
 .comment { margin-left  : 13%;
            margin-right : 13%;

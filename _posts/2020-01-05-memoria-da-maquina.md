@@ -178,7 +178,12 @@ a probabilidade deseja é definida por $P(A_2  \mid  B)$. Pela fórmula de Bayes
 
 $$P(A_2  \mid  B) = \frac{P(A_2)P(B \mid A_2)}{P(A_1)P(B \mid A_1) + P(A_2)P(B \mid A_2)} = \frac{\frac{1}{3}1}{\frac{2}{3}\frac{1}{2} + \frac{1}{3}1} = \frac{1}{2}$$
 
+</div>
+
+
 <br/><br/>
+
+<div markdown="1" class="example">
 
 ##### exemplo 2
 
@@ -211,6 +216,9 @@ e das informações da população mundial segue que
 então a fórmula de Bayes mostra que
 
 $$P(d=1  \mid  t=1) = \frac{P(t=1 \mid d=1)P(d=1)}{P(t=1 \mid d=1)P(d=1)+P(t=1 \mid d=0)P(d=0)} = 0.16$$
+
+</div>
+
 
 <br/><br/>
 
