@@ -370,7 +370,7 @@ que tem a forma
 
 $$ y=e^{-\frac{a}{2}x}\left( C_1 u_1 + C_2 u_2\right)$$
 
-onde $u_1$ e $u_2$ são determinadas pelo sinal de $d$ de modo que
+_onde $u_1$ e $u_2$ são determinadas pelo sinal de $d$ de modo que_
 
 $$
 \begin{aligned}
@@ -379,11 +379,11 @@ d0 & \Rightarrow & u_1&=cos(kx) &u_2 &=sin(kx)& \;\; (d=k^2)\\
 \end{aligned}
 $$
 
-Então algo com a cara
+_Então algo com a cara_
 
 $$y^{\prime\prime} - 13y^{\prime} + 7y = 0$$
 
-tem solução igual a 
+_tem solução igual a_
 
 $$ y(x) = C_1 e^{-\frac{1}{2} \left( \sqrt{141}-13 \right) x}+C_2 e^{\frac{1}{2} \left( 13 + \sqrt{141}\right) x}.
 $$
