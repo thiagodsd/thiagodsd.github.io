@@ -314,5 +314,3 @@ plt.xticks([i for i in range(11)]);
 </div>
 
 </div>
-
-### equações diferenciais ordinárias
