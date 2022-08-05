@@ -77,7 +77,7 @@ satisfaz a condição necessária para ser função potencial da equação desse
 
 É conveniente conhecer esse tipo de equação diferencial porque algumas de suas propriedades são usadas no estudo das soluções de equações diferenciais lineares.
 
-equação diferencial linear de primeira ordem
+## equação diferencial linear de primeira ordem
 
 Além da equação diferencial linear
 
