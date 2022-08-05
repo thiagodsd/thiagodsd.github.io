@@ -402,9 +402,13 @@ h3 {margin-top: 2.5em;}
 h4 {margin-top: 1.75em;}
 
 
-.some-page-wrapper {
-  margin: 15px;
-  background-color: red;
+
+
+/* 
+dupla coluna
+*/
+.two-column-section {
+  margin: 1em;
 }
 
 .two-column-row {
@@ -423,11 +427,13 @@ h4 {margin-top: 1.75em;}
 
 
 .left-column {
-  background-color: blue;
-  height: 100px;
+  margin: 0.5em;
+  text-align   : justify; 
+  text-justify : inter-word;
 }
 
 .right-column {
-  background-color: green;
-  height: 100px;
+  margin: 0.5em;
+  text-align   : justify; 
+  text-justify : inter-word;
 }
