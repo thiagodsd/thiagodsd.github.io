@@ -414,3 +414,14 @@ h4 {margin-top: 1.75em;}
   flex-basis: 100%;
   flex: 1;
 }
+
+
+.left-column {
+  background-color: blue;
+  height: 100px;
+}
+
+.right-column {
+  background-color: green;
+  height: 100px;
+}
