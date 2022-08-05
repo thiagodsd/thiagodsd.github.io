@@ -400,3 +400,17 @@ ol.bibliography li { padding-top : 0.75em; }
 h3 {margin-top: 2.5em;}
 
 h4 {margin-top: 1.75em;}
+
+.two-column-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.two-column-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
