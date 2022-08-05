@@ -32,7 +32,7 @@ $$
 \end{aligned}
 $$
 
-Lembrando que, dada uma função $z(x,y)$, o [Teorema de Schwarz](https://pt.wikipedia.org/wiki/Teorema_de_Clairaut-Schwarz#:~:text=Na%20an%C3%A1lise%20matem%C3%A1tica%2C%20o%20teorema,s%C3%A3o%20cont%C3%ADnuas%2C%20ent%C3%A3o%20s%C3%A3o%20iguais.) garante que
+_Lembrando que, dada uma função $z(x,y)$, o [Teorema de Schwarz](https://pt.wikipedia.org/wiki/Teorema_de_Clairaut-Schwarz#:~:text=Na%20an%C3%A1lise%20matem%C3%A1tica%2C%20o%20teorema,s%C3%A3o%20cont%C3%ADnuas%2C%20ent%C3%A3o%20s%C3%A3o%20iguais.) garante que_
 
 $$ \frac{\partial^2 z}{\partial x \partial y}=\frac{\partial^2 z}{\partial y \partial x},$$
 
@@ -231,15 +231,15 @@ $$ L(y)=e^{2x}.$$
 
 ## equação diferencial de segunda ordem
 
-A equação diferencial de segunda ordem homogênea
+_A equação diferencial de segunda ordem homogênea_
 
-$$ y''+ay'+by=0$$
+$$y''+ay'+by=0$$
 
-também tem solução geral. Para se chegar nela é interessante estudar separadamente as soluções de cada forma que essa equação assume.
+_também tem solução geral. Para chegar nessa solução é interessante estudar separadamente as soluções de cada forma que essa equação assume._
 
-caso 1: $$ a=b=0$$
+### caso 1: $a=b=0$
 
-A solução geral desse caso se obtém por uma sequência de integrações:
+_A solução geral desse caso se obtém por uma sequência de integrações:_
 
 $$
 \begin{aligned}
@@ -249,9 +249,9 @@ y &= C_1x + C_2.\\
 \end{aligned}
 $$
 
-caso 2: $$ a=0$$, $$ b<0$$
+### caso 2: $a=0$, $b<0$
 
-Nesse caso um primeiro detalhe é que qualquer número ao quadrado pode ser escrito como um certo $$ -k^2$$. Então
+_Nesse caso um primeiro detalhe é que qualquer número ao quadrado pode ser escrito como um certo $-k^2$. Então_
 
 $$
 \begin{aligned}
@@ -261,21 +261,18 @@ y'' &= k^2y.\\
 \end{aligned}
 $$
 
-Nesse ponto não tem jeito, tem que procurar alguma função que satisfaça a igualdade acima. Procurando, pensando e inspecionando um pouco conclui-se que duas funções são soluções dessa equação:
+_Nesse ponto não tem jeito -- entenda "método" --, tem que procurar alguma função que satisfaça a igualdade acima. Procurando, pensando e inspecionando um pouco, conclui-se que duas funções são soluções dessa equação:_
 
-$$ y=e^{kx}$$
+1. $y=e^{kx}$
+2. $y=e^{-kx}$
 
-e
+_O [princípio da superposição](https://pt.wikipedia.org/wiki/Princ%C3%ADpio_da_superposi%C3%A7%C3%A3o) garante que a combinação linear de soluções de equações diferenciais lineares também são soluções, então a solução geral desse caso é_
 
-$$ y=e^{-kx}.$$
+$$y=C_1e^{kx}+C_2e^{-kx}.$$
 
-O princípio da superposição garante que a combinação linear de soluções de equações diferenciais lineares também são soluções, então a solução geral desse caso é
+### caso 3: $a=0$, $b>0$
 
-$$ y=C_1e^{kx}+C_2e^{-kx}.$$
-
-caso 3: $$ a=0$$, $$ b>0$$
-
-Analogamente ao caso anterior, qualquer número positivo pode ser escrito como um certo $$ k^2$$, então
+_Analogamente ao caso anterior, qualquer número positivo pode ser escrito como um certo $k^2$, então_
 
 $$
 \begin{aligned}
@@ -285,25 +282,26 @@ y'' &= -k^2y.\\
 \end{aligned}
 $$
 
-Novamente, depois de procurar, pensar e inspecionar conclui-se que
+_Novamente, depois de procurar, pensar e inspecionar conclui-se que_
 
-$$ y=cos(kx)$$
+1. $y=cos(kx)$
+2. $y=sin(kx)$
 
-e
+_são soluções. Novamente pelo princípio da superposição se obtém a solução geral_
 
-$$ y=sin(kx)$$
+$$y=C_1cos(kx)+C_2sin(kx).$$
 
-são soluções. Novamente pelo princípio da superposição se obtém a solução geral
+### caso 4: $a\neq 0$, $b\neq0$
 
-$$ y=C_1cos(kx)+C_2sin(kx).$$
+_Esse é o caso mais geral. A motivação do raciocínio que conduz à solução geral é querer reduzir essa forma em uma das três anteriores, já que suas soluções já são conhecidas. Para isso a ideia é usar uma variação de uma estratégia recorrente na tentativa de resolução de equações diferenciais, como por exemplo_
 
-caso 4: $$ a\neq 0$$, $$ b\neq0$$
+$$\frac{dy}{dx}=\frac{y-x}{y+x}$$
 
-Esse é o caso mais geral. A motivação do raciocínio que conduz até a solução geral é querer reduzir essa forma em uma das três anteriores, já que suas soluções já são conhecidas. Para isso se usa uma variação de uma estratégia recorrente na tentativa de resolução de equações diferenciais como por exemplo
+_que é fazer uma substituição do tipo $y=ux$. No caso a escolha será_
 
-$$ \frac{dy}{dx}=\frac{y-x}{y+x}$$
+$$y=uv.$$ 
 
-que é fazer uma substituição do tipo $$ y=ux$$. No caso a escolha será $$ y=uv$$. Dessa substituição segue que
+_Dessa substituição segue que_
 
 $$
 \begin{aligned}
@@ -312,7 +310,7 @@ y''&=u''v+2u'v'+uv''.
 \end{aligned}
 $$
 
-Então
+_Então_
 
 $$
 \begin{aligned}
@@ -322,7 +320,7 @@ u''v+2u'v'+uv'' + a(u'v+uv')+buv&=0\\
 \end{aligned}
 $$
 
-Para que a equação acima assuma alguma forma cuja solução seja conhecida é preciso que o termo com $$ u$$ suma. Para isso
+_Para que a equação acima assuma alguma forma cuja solução seja conhecida é preciso que o termo com $u$ suma. Para isso_
 
 $$
 \begin{aligned}
@@ -333,15 +331,15 @@ v &= Ke^{-\frac{ax}{2}}
 \end{aligned}
 $$
 
-Então qualquer $$ v$$ com essa forma faz o trabalho de eliminar o $$ u'$$. Agora sabe-se que
+_Então qualquer $v$ com essa forma faz o trabalho de eliminar o $u'$. Agora sabe-se que_
 
-$$ v'=-\frac{a}{2}v$$
+$$v'=-\frac{a}{2}v$$
 
-e
+_e_
 
-$$ v''=\frac{a^2}{4}v,$$
+$$v''=\frac{a^2}{4}v,$$
 
-então pode-se reescrever a relação obtida anteriormente da seguinte forma
+_então_
 
 $$
 \begin{aligned}
@@ -352,27 +350,27 @@ y''+ay'+b&=0\\
 \end{aligned}
 $$
 
-Lembrando que $$ v$$ nunca vai ser igual a zero segue que a solução da equação diferencial inicial será
+_Não perdendo de vista que $v$ nunca vai ser igual a zero, segue que a solução da equação diferencial inicial será_
 
-$$ y=e^{-\frac{ax}{2}}u,$$
+$$y=e^{-\frac{ax}{2}}u,$$
 
-onde $$ u$$ satisfaz
+_onde $u$ satisfaz_
 
-$$ u''-\frac{4b-a^2}{4}u = 0,$$
+$$u''-\frac{4b-a^2}{4}u = 0,$$
 
-que é exatamente a forma estudada nos casos anteriores! Então assim como as soluções depediam do sinal de $$ b$$, agora a natureza da solução da equação diferencial inicial depende do sinal do numerador de
+_que é exatamente a forma estudada nos casos anteriores! Então, assim como as soluções depediam do sinal de $b$, agora a natureza da solução da equação diferencial inicial depende do sinal do numerador de_
 
-$$ d=\frac{4b-a^2}{4}.$$
+$$d=\frac{4b-a^2}{4}.$$
 
-A união de tudo que foi dito até agora leva ao seguinte: a solução da equação diferencial
+_A união de tudo que foi dito até agora leva à solução da equação diferencial_
 
-$$ y''+ay'+by=0$$
+$$y''+ay'+by=0$$
 
-tem forma
+que tem a forma
 
 $$ y=e^{-\frac{a}{2}x}\left( C_1 u_1 + C_2 u_2\right)$$
 
-onde a natureza de $$ u_1$$ e $$ u_2$$ é determinada pelo sinal de $$ d$$ de modo que
+onde $u_1$ e $u_2$ são determinadas pelo sinal de $d$ de modo que
 
 $$
 \begin{aligned}
@@ -381,12 +379,15 @@ d0 & \Rightarrow & u_1&=cos(kx) &u_2 &=sin(kx)& \;\; (d=k^2)\\
 \end{aligned}
 $$
 
-A essa altura seria interessante mostrar esse resultado funcionando e geralmente é legal fazer isso através do estudo de circuitos elétricos, mas vou pular essa parte. Qualquer "y'' - 13y' + 7y = 0" no Wolfram Aplha já retorna a solução correta
+Então algo com a cara
+
+$$y^{\prime\prime} - 13y^{\prime} + 7y = 0$$
+
+tem solução igual a 
 
 $$ y(x) = C_1 e^{-\frac{1}{2} \left( \sqrt{141}-13 \right) x}+C_2 e^{\frac{1}{2} \left( 13 + \sqrt{141}\right) x}.
 $$
 
-Isso encerra essa segunda parte do passeio. O resto do texto provavelmente terá outras três partes: a próxima tratará do uso desse último resultado na resolução de equações diferenciais de ordem n, a seguinte tratará de alguns métodos de encontrar soluções particulares de equações diferenciais não homogêneas e por último fica o registro de um método envolvendo matrizes.
-
-A SER CONTINUADO...
-
+<br/>
+<p style="color: red; font-weight: light;"> <i>(novamente, não tenho ideia do que esse final anticlimático deveria significar)</i></p> 
+<br/>
