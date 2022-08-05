@@ -91,18 +91,18 @@ $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento
 ## reforço
 
 <div class='two-column-section'>
-  <div class='two-column-row'>
-    <div class='two-column-column'>
-      <div class='left-column'>
-        Some Text in Column One
-      </div>
-    </div>
-    <div class='two-column-column'>
-      <div class='right-column'>
-        Some Text in Column Two
-      </div>
-    </div>
-  </div>
+<div class='two-column-row'>
+<div class='two-column-column'>
+<div class='left-column'>
+Some Text in Column One
+</div>
+</div>
+<div class='two-column-column'>
+<div class='right-column'>
+Some Text in Column Two
+</div>
+</div>
+</div>
 </div>
 
 <br/>
