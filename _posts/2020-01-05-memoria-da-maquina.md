@@ -106,15 +106,20 @@ em que $S = \left[ s_1, s_2, \dots, s_n \right]$ é o conjunto de todos estados 
 Então, em um MDP, a probabilidade $p$ de transição do estado $s$ para o estado $s'$ após a ação $a$ satisfaz
 
 $$\begin{cases}
-p(s' \mid s, a) = p(S_t=s' \mid S_{t-1}=s, A_{t-1}=a) \\
+p(s' \mid s, a) = P(S_t=s' \mid S_{t-1}=s, A_{t-1}=a) \\
 \sum_{s' \in S} p(s' \mid s, a) = 1
 \end{cases}$$
 
-Além disso é suposto que há uma recompensa final $G$ que é resultado de recompensas parciais $R$ devidas à sequência de ações 
+Além disso, é suposto que há uma recompensa final $G$ que é resultado de retornos parciais $R$ devidas à sequência de ações 
 
 $$G_t = R_{t+1} + R_{t+2} \dots R_{T}$$
 
-Em que $R_T$ é a recompensa do estado terminal.
+Em que $R_T$ é a recompensa do estado terminal. Incluindo esse elemento na função de transição de estados
+
+$$\begin{cases}
+p(s', r \mid s, a) = P(S_t=s', R_t=r \mid S_{t-1}=s, A_{t-1}=a) \\
+\sum_{s' \in \mathcal{S}} \sum_{r \in \mathcal{R}}p(s', r \mid s, a) = 1
+\end{cases}$$
 
 Contudo, no contexto de tomada de decisão sequencial o tempo tem papel central, de modo que é natural interpretar que a melhor sequência de tomada de decisão é a que chega a bons estados terminais mais rapidamente -- ou seja, quanto maior o tempo gasto para ganho de recompensas futuras, menos elas valem. Essa urgência pode ser expressada através do decremento temporal proporcional a um fator de desconto $\gamma \in \left[0, 1\right]$ tal que
 
@@ -133,6 +138,56 @@ Disso, surgem provavelmente as duas funções em torno das quais orbitam todos o
 + função ação-valor $q_{\pi}(s,a)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$
     + que também pode ser interpretada como uma função que atribui um valor à ação $a$ executada no estado $s$
 
+Desenvolvendo $v_{\pi}$
+
+$$
+\begin{aligned}
+v_{\pi}(s) =& E_{\pi}\left[ G_t \mid S_t = s\right] \\
+  =& E_{\pi}\left[ R_{t+1} + \gamma G_{t+1} \mid S_t = s\right] \\
+\text{linearidade da média}  =& E_{\pi}\left[ R_{t+1} \mid S_t = s\right] + \gamma E_{\pi}\left[G_{t+1} \mid S_t = s\right] \\
+\end{aligned}
+$$
+
+O primeiro termo é a recompensa esperada dado um estado $s$. Por definição de média para variáveis discretas combinada às propriedades das funções densidade probabilidade
+
+$$
+\begin{aligned}
+E_{\pi}\left[ R_{t+1} \mid S_t = s\right] =& \sum_{r \in \mathcal{R}} r \, p(r \mid s) \\
+=& \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} r \, p(s', a, r \mid s) \\
+=& \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} r \, p(s', r \mid s, a)p(a \mid s) 
+\end{aligned}
+$$
+
+O segundo tem desenvolvimento análogo
+
+$$
+\begin{aligned}
+\gamma E_{\pi}\left[G_{t+1} \mid S_t = s\right] =& \gamma \sum_{g \in \mathcal{G}} g \, p(g \mid s) \\
+=& \gamma \sum_{g \in \mathcal{G}} \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} g \, p(g, s', a, r \mid s) \\
+=& \gamma \sum_{g \in \mathcal{G}} \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} g \, p(g\mid s', a, r, s) p(s', a, r \mid s) \\
+=& \gamma \sum_{g \in \mathcal{G}} \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} g \, p(g\mid s', a, r, s) p(s', r \mid s, a)p(a \mid s) \\
+\text{propriedade de markov}=& \gamma \sum_{g \in \mathcal{G}} \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} g \, p(g\mid s') p(s', r \mid s, a)p(a \mid s) \\
+=& \gamma  \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} \left( \sum_{g \in \mathcal{G}} g \, p(g\mid s') \right)p(s', r \mid s, a)p(a \mid s) \\
+=& \gamma  \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} v_{\pi}(s') p(s', r \mid s, a)p(a \mid s) \\
+\end{aligned}
+$$
+
+
+Então
+
+$$
+\begin{aligned}
+v_{\pi}(s) =& E_{\pi}\left[ G_t \mid S_t = s\right] \\
+=& \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}} \sum_{a \in \mathcal{A}} p(a \mid s) p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right] \\
+=& \sum_{a \in \mathcal{A}} p(a \mid s) \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right] \\
+\end{aligned}
+$$
+
+$$\boxed{v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
+
+É possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
+
+$$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
 
 ### _temporal-difference learning_ (anotações)
