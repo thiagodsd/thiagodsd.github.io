@@ -97,24 +97,17 @@ De forma completamente rasteira e sem compromisso com qualquer espécie de rigor
 
 ### do mdp à equação de bellman
 
-Alguns sistemas -- sobretudo os de tomadas de decisões sequenciais -- podem ser estruturados de acordo com o framework _Markov Decision Process_ (MDP). Nesse framework é suposta que a _propriedade de Markov_ é satisfeita para o sistema, ou seja, que as probabilidades de transição entre estados não depende de toda a história dos eventos e ações nesse sistema, senão apenas do estado anterior -- ou seja, nesses sistemas o que impera é a memória curta; nesse sentido, nosso sistema eleitoral pode ser estruturado de acordo com um MDP. Essa propriedade pode ser resumida por
+Alguns sistemas -- sobretudo os de tomadas de decisões sequenciais -- podem ser estruturados de acordo com o framework _[Markov Decision Process](https://en.wikipedia.org/wiki/Markov_decision_process)_ (MDP). Nesse framework é suposta que a _[propriedade de Markov](https://pt.wikipedia.org/wiki/Propriedade_de_Markov)_ é satisfeita para o sistema, ou seja, que as probabilidades de transição entre estados não depende de toda a história dos eventos e ações nesse sistema, senão apenas do estado anterior -- ou seja, nesses sistemas o que impera é a memória curta; nesse sentido, nosso sistema eleitoral pode ser estruturado de acordo com um MDP. Essa propriedade pode ser resumida por
 
 $$P(S_{t+1} \mid S_t, A_t) = P(S_{t+1} \mid S_t, A_t, S_{t-1}, A_{t-1}, \dots)$$
 
 em que $S = \left[ s_1, s_2, \dots, s_n \right]$ é o conjunto de todos estados possíveis do sistema e $A = \left[ a_1, a_2, \dots, a_n \right]$ é o conjunto de todas as ações possíveis. 
 
-Então, em um MDP, a probabilidade $p$ de transição do estado $s$ para o estado $s'$ após a ação $a$ satisfaz
-
-$$\begin{cases}
-p(s' \mid s, a) = P(S_t=s' \mid S_{t-1}=s, A_{t-1}=a) \\
-\sum_{s' \in S} p(s' \mid s, a) = 1
-\end{cases}$$
-
 Além disso, é suposto que há uma recompensa final $G$ que é resultado de retornos parciais $R$ devidas à sequência de ações 
 
 $$G_t = R_{t+1} + R_{t+2} \dots R_{T}$$
 
-Em que $R_T$ é a recompensa do estado terminal. Incluindo esse elemento na função de transição de estados
+Em que $R_T$ é a recompensa do estado terminal. Então, em um MDP, a probabilidade $p$ de receber a recompensa $r$ transitando do estado $s$ para o estado $s'$ após a ação $a$ satisfaz
 
 $$\begin{cases}
 p(s', r \mid s, a) = P(S_t=s', R_t=r \mid S_{t-1}=s, A_{t-1}=a) \\
