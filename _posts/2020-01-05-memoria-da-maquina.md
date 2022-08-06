@@ -88,22 +88,87 @@ $$\begin{cases}
 
 $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento}}{\neg\text{evento}} = \frac{p_+}{p_-} =  \frac{\sigma(w^T x)}{1-\sigma(w^T x)} = \frac{\sigma(w^T x)}{\sigma(-w^T x)}  $$
 
+
+
+
 ## reforço
+
+<p class="topico">aprendizagem estatística</p>
+
+### _temporal-difference learning_ (anotações)
+
++ $\text{policy evaluation} (v^{*}:v|\pi) \rightarrow \text{prediction problem}$
++ $\text{optimal policy search} (\pi^{*}) \rightarrow \text{control problem}$
+
++ Em contraste aos métodos _Monte Carlo_, os métodos _Temporal-Difference_ atualizam a política imediatamente após uma interação com o ambiente
+    + MC: $V(S_t) \leftarrow V(S_t) + \alpha\left[ G_t - V(S_t)\right]$ (ou seja, o target é $G_t$)
+    + TD: $V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t+1}) -V(S_t))\right]$ (ou seja, o target é $R_{t+1} - \gamma V(S_{t+1})$)
 
 <div class='two-column-section'>
 <div class='two-column-row'>
 <div class='two-column-column'>
 <div class='left-column'>
 
-$\delta\mathcal{S} = 0$
+Dada a experiência 
 
 </div>
 </div>
 <div class='two-column-column'>
-<div class='right-column'>
+<div class='right-column-grey'>
 
 ```python
-# codigo
+Q_qls, V_qls, Q_track_qls = [], [], []
+for seed in tqdm(SEEDS, desc='All seeds', leave=True):
+    random.seed(seed); np.random.seed(seed) ; env.seed(seed)
+    Q_ql, V_ql, pi_ql, Q_track_ql, pi_track_ql = q_learning(env, gamma=gamma, n_episodes=n_episodes)
+    Q_qls.append(Q_ql) ; V_qls.append(V_ql) ; Q_track_qls.append(Q_track_ql)
+Q_ql = np.mean(Q_qls, axis=0)
+V_ql = np.mean(V_qls, axis=0)
+Q_track_ql = np.mean(Q_track_qls, axis=0)
+del Q_qls ; del V_qls ; del Q_track_qls
+```
+
+```python
+def q_learning(env, 
+               gamma=1.0,
+               init_alpha=0.5,
+               min_alpha=0.01,
+               alpha_decay_ratio=0.5,
+               init_epsilon=1.0,
+               min_epsilon=0.1,
+               epsilon_decay_ratio=0.9,
+               n_episodes=3000):
+    nS, nA = env.observation_space.n, env.action_space.n
+    pi_track = []
+    Q = np.zeros((nS, nA), dtype=np.float64)
+    Q_track = np.zeros((n_episodes, nS, nA), dtype=np.float64)
+    select_action = lambda state, Q, epsilon: np.argmax(Q[state]) \
+        if np.random.random() > epsilon \
+        else np.random.randint(len(Q[state]))
+    alphas = decay_schedule(init_alpha, 
+                           min_alpha, 
+                           alpha_decay_ratio, 
+                           n_episodes)
+    epsilons = decay_schedule(init_epsilon, 
+                              min_epsilon, 
+                              epsilon_decay_ratio, 
+                              n_episodes)
+    for e in tqdm(range(n_episodes), leave=False):
+        state, done = env.reset(), False
+        while not done:
+            action = select_action(state, Q, epsilons[e])
+            next_state, reward, done, _ = env.step(action)
+            td_target = reward + gamma * Q[next_state].max() * (not done)
+            td_error = td_target - Q[state][action]
+            Q[state][action] = Q[state][action] + alphas[e] * td_error
+            state = next_state
+
+        Q_track[e] = Q
+        pi_track.append(np.argmax(Q, axis=1))
+
+    V = np.max(Q, axis=1)        
+    pi = lambda s: {s:a for s, a in enumerate(np.argmax(Q, axis=1))}[s]
+    return Q, V, pi, Q_track, pi_track
 ```
 
 </div>
