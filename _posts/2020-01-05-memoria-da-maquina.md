@@ -97,7 +97,7 @@ $$\text{odds} = \frac{p}{1-p} = \frac{Bern(y=1)}{Bern(y=0)} = \frac{\text{evento
 
 ### _temporal-difference learning_ (anotações)
 
-+ $\text{policy evaluation} (v^{*}:v|\pi) \rightarrow \text{prediction problem}$
++ $\text{policy evaluation} (v^{*}:v\mid\pi) \rightarrow \text{prediction problem}$
 + $\text{optimal policy search} (\pi^{*}) \rightarrow \text{control problem}$
 
 + Em contraste aos métodos _Monte Carlo_, os métodos _Temporal-Difference_ atualizam a política imediatamente após uma interação com o ambiente
