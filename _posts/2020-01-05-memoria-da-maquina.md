@@ -178,7 +178,7 @@ $$
 
 $$\boxed{v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
-É possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
+Eu tenho sérias dúvidas se essa já é a [equação de Bellman](https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Bellman) para sistemas descritos como MDP, ou se as equações de Bellman são as que definem as condições de otimalidade para a solução da equação acima. De qualquer forma, é possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
