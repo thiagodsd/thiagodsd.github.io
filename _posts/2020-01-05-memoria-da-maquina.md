@@ -8,6 +8,8 @@ tags: aprendizagem-estatistica notas
 toc: true
 ---
 
+Anotações desordenadas sobre as periferias da aprendizagem estatística.
+
 {% comment %}
 <!-- Aqui é Body Builder Ipsum PORRA! É verão o ano todo vem cumpadi. Vem porra! É nóis caraio é trapezera buscando caraio! Tá comigo porra. Aqui nóis constrói fibra, não é água com músculo.
  -->
