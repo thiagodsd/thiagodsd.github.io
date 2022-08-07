@@ -235,6 +235,10 @@ Dessa estrutura derivam dois importantes métodos
 
 #### sarsa (_on-policy_)
 
+Nessa abordagem a função aprendida é a $q_{\pi}(s,a)$, com passo de atualização 
+
+$$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t))\right]$$
+
 <div class='two-column-section'>
 <div class='two-column-row'>
 <div class='two-column-column'>
@@ -242,18 +246,20 @@ Dessa estrutura derivam dois importantes métodos
 
 <pre id="sarsa" class="pseudocode" style="display:hidden;">
 \begin{algorithm}
-\caption{TD}
+\caption{SARSA}
 \begin{algorithmic}
-\Procedure{TD}{$\pi,\alpha \in [0,1)$} 
-    \State inicializa $V(s)$ aleatoriamente
-    \State define $V(terminal)=0$
+\Procedure{SARSA}{$\pi,\alpha \in [0,1), \epsilon \to 0^{+}$} 
+    \State inicializa $Q(s,a)$ aleatoriamente
+    \State define $Q(terminal, \cdot)=0$
     \For{episódio}
     \State inicializa $S$
+    \State escolhe $A$ em $S$ de acordo com $\pi(a \mid s)$ de $Q$
     \Repeat
-        \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
         \State observa $R$ e $S'$
-        \State $V(S) \leftarrow V(S) + \alpha\left[ R - \gamma V(S') - V(S))\right]$
+        \State escolhe $A'$ em $S'$ de acordo com $\pi(a \mid s)$ de $Q$
+        \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma Q(S',A') - Q(S,S))\right]$
         \State $S \leftarrow S'$
+        \State $A \leftarrow A'$
     \Until{$S$ é estado terminal}
     \EndFor
 \EndProcedure
@@ -285,6 +291,10 @@ Dessa estrutura derivam dois importantes métodos
 
 #### q-learning (_off-policy_)
 
+Nessa abordagem há uma mudança sutil: a função aprendida é a ação-valor ótima $q_{*}(s,a)$, com passo de atualização 
+
+$$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a}{max} Q(S_{t+1}, a) - Q(S_t, A_t))\right]$$
+
 <div class='two-column-section'>
 <div class='two-column-row'>
 <div class='two-column-column'>
@@ -292,17 +302,17 @@ Dessa estrutura derivam dois importantes métodos
 
 <pre id="qlearning" class="pseudocode" style="display:hidden;">
 \begin{algorithm}
-\caption{TD}
+\caption{Q-Learning}
 \begin{algorithmic}
-\Procedure{TD}{$\pi,\alpha \in [0,1)$} 
-    \State inicializa $V(s)$ aleatoriamente
-    \State define $V(terminal)=0$
+\Procedure{QLEARNING}{$\alpha \in [0,1), \epsilon \to 0^{+}$} 
+    \State inicializa $Q(s,a)$ aleatoriamente
+    \State define $Q(terminal, \cdot)=0$
     \For{episódio}
     \State inicializa $S$
     \Repeat
-        \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
+        \State escolhe $A$ em $S$ de acordo com $Q$
         \State observa $R$ e $S'$
-        \State $V(S) \leftarrow V(S) + \alpha\left[ R - \gamma V(S') - V(S))\right]$
+        \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
         \State $S \leftarrow S'$
     \Until{$S$ é estado terminal}
     \EndFor
