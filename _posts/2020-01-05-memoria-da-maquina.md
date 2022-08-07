@@ -197,7 +197,7 @@ de onde surge o algoritmo TD para estimativa de $v_{\pi}$
     \begin{algorithm}
     \caption{TD}
     \begin{algorithmic}
-    \PROCEDURE{TD}{$\pi$, $\alpha$}
+    \Procedure{TD}{$\pi,\alpha$} 
     \end{algorithmic}
     \end{algorithm}
 </pre>
