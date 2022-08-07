@@ -183,15 +183,22 @@ Eu tenho sérias dúvidas se essa já é a [equação de Bellman](https://es.wik
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
 
-### _temporal-difference learning_ (anotações)
+### _temporal-difference learning_ 
+
+<p style="color: red; font-weight: light;"> <i>a partir daqui os parágrafos são rascunhos e esboços</i> </p> 
 
 + $\text{policy evaluation} \quad (v^{*}:v\mid\pi) \rightarrow \text{prediction problem}$
 + $\text{optimal policy search} \quad (\pi^{*}) \rightarrow \text{control problem}$
-+ Em contraste aos métodos _Monte Carlo_, os métodos _Temporal-Difference_ atualizam a _state-value function_ imediatamente após uma interação com o ambiente
-    + MC: $V(S_t) \leftarrow V(S_t) + \alpha\left[ G_t - V(S_t)\right]$ (ou seja, o target é $G_t$)<br/><br/>
-    + TD: $V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t+1}) -V(S_t))\right]$ (ou seja, o target é $R_{t+1} - \gamma V(S_{t+1})$)
 
-de onde surge o algoritmo TD para estimativa de $v_{\pi}$
+Em contraste aos métodos _Monte Carlo_, em que o problema da predição é resolvido levando-se em conta a recompensa $G_t$
+
+$$\text{MC: } \, V(S_t) \leftarrow V(S_t) + \alpha\left[ G_t - V(S_t)\right] \quad (\text{target: }G_t)$$
+
+nos métodos _Temporal-Difference_ o problema é resolvido levando em conta os retornos parciais $R_t$, de acordo com
+
+$$\text{TD: } \, V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t+1}) -V(S_t))\right] \quad (\text{target: }R_{t+1} - \gamma V(S_{t+1}))$$
+
+de onde surge a forma mais primitiva do algoritmo TD para estimativa de $v_{\pi}$
 
 <pre id="tdzero" class="pseudocode" style="display:hidden;">
 \begin{algorithm}
@@ -222,12 +229,43 @@ de onde surge o algoritmo TD para estimativa de $v_{\pi}$
     pseudocode.renderClass("pseudocode");
 </script>
 
+Dessa estrutura derivam dois importantes métodos
+
+#### sarsa (_on-policy_)
+
 <div class='two-column-section'>
 <div class='two-column-row'>
 <div class='two-column-column'>
 <div class='left-column'>
 
-...
+<pre id="sarsa" class="pseudocode" style="display:hidden;">
+\begin{algorithm}
+\caption{TD}
+\begin{algorithmic}
+\Procedure{TD}{$\pi,\alpha \in [0,1)$} 
+    \State inicializa $V(s)$ aleatoriamente
+    \State define $V(terminal)=0$
+    \For{episódio}
+    \State inicializa $S$
+    \Repeat
+        \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
+        \State observa $R$ e $S'$
+        \State $V(S) \leftarrow V(S) + \alpha\left[ R - \gamma V(S') - V(S))\right]$
+        \State $S \leftarrow S'$
+    \Until{$S$ é estado terminal}
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
+<script>
+    pseudocode.renderElement(document.getElementById("sarsa"));
+</script>
+
+<script>
+    pseudocode.renderClass("pseudocode");
+</script>
 
 </div>
 </div>
@@ -241,14 +279,43 @@ de onde surge o algoritmo TD para estimativa de $v_{\pi}$
 </div>
 </div>
 </div>
+</div>
 
-<!-- -->
+#### q-learning (_off-policy_)
 
+<div class='two-column-section'>
 <div class='two-column-row'>
 <div class='two-column-column'>
 <div class='left-column'>
 
-...
+<pre id="sarsa" class="pseudocode" style="display:hidden;">
+\begin{algorithm}
+\caption{TD}
+\begin{algorithmic}
+\Procedure{TD}{$\pi,\alpha \in [0,1)$} 
+    \State inicializa $V(s)$ aleatoriamente
+    \State define $V(terminal)=0$
+    \For{episódio}
+    \State inicializa $S$
+    \Repeat
+        \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
+        \State observa $R$ e $S'$
+        \State $V(S) \leftarrow V(S) + \alpha\left[ R - \gamma V(S') - V(S))\right]$
+        \State $S \leftarrow S'$
+    \Until{$S$ é estado terminal}
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
+<script>
+    pseudocode.renderElement(document.getElementById("sarsa"));
+</script>
+
+<script>
+    pseudocode.renderClass("pseudocode");
+</script>
 
 </div>
 </div>
@@ -263,6 +330,31 @@ de onde surge o algoritmo TD para estimativa de $v_{\pi}$
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br/>
 <br/>
