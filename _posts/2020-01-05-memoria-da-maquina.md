@@ -371,9 +371,9 @@ $$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{
         \State observa $R$ e $S'$
         \State $p \leftarrow \mathcal{U}_{[0,1]}$
         \If{$p > 0.5$}
-            \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+            \State $Q_{1}(S,A) \leftarrow Q_{1}(S,A) + \alpha\left[R - \gamma Q_{2}\left(S', \underset{a}{max} Q_{1}(S',a)\left) - Q_{1}(S, A))\right]$
         \Else
-            \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+            \State $Q_{2}(S,A) \leftarrow Q_{2}(S,A) + \alpha\left[R - \gamma Q_{1}\left(S', \underset{a}{max} Q_{2}(S',a)\left) - Q_{2}(S, A))\right]$
         \EndIf
         \State $S \leftarrow S'$
     \Until{$S$ é estado terminal}
