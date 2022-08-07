@@ -288,7 +288,7 @@ Dessa estrutura derivam dois importantes métodos
 <div class='two-column-column'>
 <div class='left-column'>
 
-<pre id="sarsa" class="pseudocode" style="display:hidden;">
+<pre id="qlearning" class="pseudocode" style="display:hidden;">
 \begin{algorithm}
 \caption{TD}
 \begin{algorithmic}
@@ -310,7 +310,7 @@ Dessa estrutura derivam dois importantes métodos
 </pre>
 
 <script>
-    pseudocode.renderElement(document.getElementById("sarsa"));
+    pseudocode.renderElement(document.getElementById("qlearning"));
 </script>
 
 <script>
