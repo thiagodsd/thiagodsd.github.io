@@ -348,7 +348,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a
 
 Para evitar o "viés da maximização" no Q-Learning, causado pelo uso dos mesmos valores usados para ambos, obter a ação que maximiza a função ação-valor e estimar seu valor, é introduzida uma segunda função ação-valor, de modo a desacoplar esses dois passos, fazendo o passo de atualização passar a ser
 
-$$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{2}\left(S_{t+1}, \underset{a}{max} Q_{1}(S_{t+1}, a)\left) - Q_{1}(S_t, A_t))\right]$$
+$$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{2}\left(S_{t+1}, \underset{a}{max} Q_{1}(S_{t+1}, a)\right) - Q_{1}(S_t, A_t))\right]$$
 
 <div class='two-column-section'>
 <div class='two-column-row'>
@@ -371,9 +371,9 @@ $$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{
         \State observa $R$ e $S'$
         \State $p \leftarrow \mathcal{U}_{[0,1]}$
         \If{$p > 0.5$}
-            \State $Q_{1}(S,A) \leftarrow Q_{1}(S,A) + \alpha\left[R - \gamma Q_{2}\left(S', \underset{a}{max} Q_{1}(S',a)\left) - Q_{1}(S, A))\right]$
+            \State $Q_{1}(S,A) \leftarrow Q_{1}(S,A) + \alpha\left[R - \gamma Q_{2}\left(S', \underset{a}{max} Q_{1}(S',a)\right) - Q_{1}(S, A))\right]$
         \Else
-            \State $Q_{2}(S,A) \leftarrow Q_{2}(S,A) + \alpha\left[R - \gamma Q_{1}\left(S', \underset{a}{max} Q_{2}(S',a)\left) - Q_{2}(S, A))\right]$
+            \State $Q_{2}(S,A) \leftarrow Q_{2}(S,A) + \alpha\left[R - \gamma Q_{1}\left(S', \underset{a}{max} Q_{2}(S',a)\right) - Q_{2}(S, A))\right]$
         \EndIf
         \State $S \leftarrow S'$
     \Until{$S$ é estado terminal}
