@@ -97,11 +97,11 @@ De forma completamente rasteira e sem compromisso com qualquer espécie de rigor
 
 ### do mdp à equação de bellman
 
-Alguns sistemas -- sobretudo os de tomadas de decisões sequenciais -- podem ser estruturados de acordo com o framework _[Markov Decision Process](https://en.wikipedia.org/wiki/Markov_decision_process)_ (MDP). Nesse framework é suposta que a _[propriedade de Markov](https://pt.wikipedia.org/wiki/Propriedade_de_Markov)_ é satisfeita para o sistema, ou seja, que as probabilidades de transição entre estados não depende de toda a história dos eventos e ações nesse sistema, senão apenas do estado anterior -- ou seja, nesses sistemas o que impera é a memória curta; nesse sentido, nosso sistema eleitoral pode ser estruturado de acordo com um MDP. Essa propriedade pode ser resumida por
+Alguns sistemas -- sobretudo os de tomadas de decisões sequenciais -- podem ser estruturados de acordo com o framework _[Markov Decision Process](https://en.wikipedia.org/wiki/Markov_decision_process)_ (MDP). Nele é suposta que a _[propriedade de Markov](https://pt.wikipedia.org/wiki/Propriedade_de_Markov)_ é satisfeita para o sistema, ou seja, que as probabilidades de transição entre estados não depende de toda a história dos eventos e ações nesse sistema, senão apenas do estado anterior -- ou seja, nesses sistemas o que impera é a memória curta; nesse sentido, nosso sistema eleitoral pode ser estruturado de acordo com um MDP. Essa propriedade pode ser resumida por
 
 $$P(S_{t+1} \mid S_t, A_t) = P(S_{t+1} \mid S_t, A_t, S_{t-1}, A_{t-1}, \dots)$$
 
-em que $S = \left[ s_1, s_2, \dots, s_n \right]$ é o conjunto de todos estados possíveis do sistema e $A = \left[ a_1, a_2, \dots, a_n \right]$ é o conjunto de todas as ações possíveis. 
+em que $S_{i}$ é o estado do sistema no i-ésimo instante -- esse estado é elemento do conjunto $\mathcal{S} = \left[ s_1, s_2, \dots, s_n \right]$ de todos estados possíveis de serem acessados no sistema. Analogamente, $A_i$ é a ação executada no i-ésimo instante, podendo assumir os valores contidos no conjunto $\mathcal{A} = \left[ a_1, a_2, \dots, a_n \right]$ que contém todas as ações possíveis.
 
 Além disso, é suposto que há uma recompensa final $G$ que é resultado de retornos parciais $R$ devidas à sequência de ações 
 
