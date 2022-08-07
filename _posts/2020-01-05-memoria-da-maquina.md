@@ -205,7 +205,7 @@ de onde surge o algoritmo TD para estimativa de $v_{\pi}$
     \Repeat
         \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
         \State observa $R$ e $S'$
-        \State $V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t+1}) -V(S_t))\right]$
+        \State $V(S) \leftarrow V(S) + \alpha\left[ R - \gamma V(S') - V(S))\right]$
         \State $S \leftarrow S'$
     \Until{$S$ é estado terminal}
     \EndFor
