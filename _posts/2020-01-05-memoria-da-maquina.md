@@ -193,17 +193,29 @@ $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s'
 
 de onde surge o algoritmo TD para estimativa de $v_{\pi}$
 
-<pre id="quicksort" class="pseudocode" style="display:hidden;">
-    \begin{algorithm}
-    \caption{TD}
-    \begin{algorithmic}
-    \Procedure{TD}{$\pi,\alpha$} 
-    \end{algorithmic}
-    \end{algorithm}
+<pre id="tdzero" class="pseudocode" style="display:hidden;">
+\begin{algorithm}
+\caption{TD}
+\begin{algorithmic}
+\Procedure{TD}{$\pi,\alpha \in [0,1)$} 
+    \State inicializa $V(s)$ aleatoriamente
+    \State define $V(terminal)=0$
+    \For{episódio}
+    \State inicializa $S$
+    \Repeat
+        \State $A \leftarrow a$ de acordo com $\pi(a \mid s)$
+        \State observa $R$ e $S'$
+        \State $V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t+1}) -V(S_t))\right]$
+        \State $S \leftarrow S'$
+    \Until{$S$ é estado terminal}
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 </pre>
 
 <script>
-    pseudocode.renderElement(document.getElementById("quicksort"));
+    pseudocode.renderElement(document.getElementById("tdzero"));
 </script>
 
 <script>
