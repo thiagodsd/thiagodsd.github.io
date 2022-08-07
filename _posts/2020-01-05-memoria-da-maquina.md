@@ -360,14 +360,21 @@ $$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{
 \caption{Double Q-Learning}
 \begin{algorithmic}
 \Procedure{DQL}{$\alpha \in [0,1), \epsilon \to 0^{+}$} 
-    \State inicializa $Q(s,a)$ aleatoriamente
-    \State define $Q(terminal, \cdot)=0$
+    \State inicializa $Q_{1}(s,a)$ aleatoriamente
+    \State inicializa $Q_{2}(s,a)$ aleatoriamente
+    \State define $Q_{1}(terminal, \cdot)=0$
+    \State define $Q_{2}(terminal, \cdot)=0$
     \For{episódio}
     \State inicializa $S$
     \Repeat
-        \State escolhe $A$ em $S$ de acordo com $Q$
+        \State escolhe $A$ em $S$ de acordo com $Q_{1}+Q_{2}$
         \State observa $R$ e $S'$
-        \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+        \State $p \leftarrow \mathcal{U}_{[0,1]}$
+        \If{$p > 0.5$}
+            \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+        \Else
+            \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+        \EndIf
         \State $S \leftarrow S'$
     \Until{$S$ é estado terminal}
     \EndFor
