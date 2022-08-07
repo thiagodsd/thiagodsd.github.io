@@ -127,7 +127,7 @@ $$
 Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço
 
 + função estado-valor $v_{\pi}(s)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$
-    + que também pode ser interpretada como uma função que atribui um valor a um estado $s$ quando uma política $\pi$ é seguida
+    + que também pode ser interpretada como uma função que atribui um valor a um estado $s$ quando uma política $\pi$ é seguida<br/><br/>
 + função ação-valor $q_{\pi}(s,a)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$
     + que também pode ser interpretada como uma função que atribui um valor à ação $a$ executada no estado $s$
 
