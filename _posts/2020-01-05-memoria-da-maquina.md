@@ -304,7 +304,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a
 \begin{algorithm}
 \caption{Q-Learning}
 \begin{algorithmic}
-\Procedure{QLEARNING}{$\alpha \in [0,1), \epsilon \to 0^{+}$} 
+\Procedure{QL}{$\alpha \in [0,1), \epsilon \to 0^{+}$} 
     \State inicializa $Q(s,a)$ aleatoriamente
     \State define $Q(terminal, \cdot)=0$
     \For{episódio}
@@ -344,6 +344,59 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a
 </div>
 
 
+#### double q-learning
+
+Para evitar o "viés da maximização" no Q-Learning, causado pelo uso dos mesmos valores usados para ambos, obter a ação que maximiza a função ação-valor e estimar seu valor, é introduzida uma segunda função ação-valor, de modo a desacoplar esses dois passos, fazendo o passo de atualização passar a ser
+
+$$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{2}\left(S_{t+1}, \underset{a}{max} Q_{1}(S_{t+1}, a)\left) - Q_{1}(S_t, A_t))\right]$$
+
+<div class='two-column-section'>
+<div class='two-column-row'>
+<div class='two-column-column'>
+<div class='left-column'>
+
+<pre id="doubleqlearning" class="pseudocode" style="display:hidden;">
+\begin{algorithm}
+\caption{Double Q-Learning}
+\begin{algorithmic}
+\Procedure{DQL}{$\alpha \in [0,1), \epsilon \to 0^{+}$} 
+    \State inicializa $Q(s,a)$ aleatoriamente
+    \State define $Q(terminal, \cdot)=0$
+    \For{episódio}
+    \State inicializa $S$
+    \Repeat
+        \State escolhe $A$ em $S$ de acordo com $Q$
+        \State observa $R$ e $S'$
+        \State $Q(S,A) \leftarrow Q(S,A) + \alpha\left[R - \gamma \underset{a}{max} Q(S',a) - Q(S,A))\right]$
+        \State $S \leftarrow S'$
+    \Until{$S$ é estado terminal}
+    \EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
+<script>
+    pseudocode.renderElement(document.getElementById("doubleqlearning"));
+</script>
+
+<script>
+    pseudocode.renderClass("pseudocode");
+</script>
+
+</div>
+</div>
+<div class='two-column-column'>
+<div class='right-column-grey'>
+
+```python
+# ...
+```
+
+</div>
+</div>
+</div>
+</div>
 
 
 
