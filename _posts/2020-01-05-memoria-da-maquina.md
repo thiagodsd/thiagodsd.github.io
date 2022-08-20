@@ -128,16 +128,13 @@ $$
 
 Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço:
 
-+ função estado-valor $v_{\pi}(s)$
-+ função estado-ação-valor $q_{\pi}(s,a)$
-
 #### função $v_{\pi}(s)$
 
-+ função estado-valor $v_{\pi}(s)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$
-    + que também pode ser interpretada como uma função que atribui um valor a um estado $s$ quando uma política $\pi$ é seguida<br/><br/>
+A (mal traduzindo) função estado-valor $v_{\pi}(s)$ é definida como uma medida da recompensa esperada por seguir a política $\pi$ partindo do estado $s$ -- também pode ser interpretada como uma função que atribui um valor a um estado $s$ quando a política $\pi$ é usada na tomada de decisão. Ou seja
 
+$$v_{\pi}(s) \equiv E_{\pi}\left[ G_t \mid S_t = s\right]$$
 
-Desenvolvendo $v_{\pi}$
+Desenvolvendo:
 
 $$
 \begin{aligned}
@@ -188,17 +185,60 @@ Eu tenho sérias dúvidas se essa já é a [equação de Bellman](https://es.wik
 
 #### função $q_{\pi}(s,a)$
 
-+ função ação-valor $q_{\pi}(s,a)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$
-    + que também pode ser interpretada como uma função que atribui um valor à ação $a$ executada no estado $s$
+A (mal traduzindo) função estado-ação-valor $q_{\pi}(s,a)$ é definida como uma medida da recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$ -- ou seja, é uma função que atribui um valor à ação $a$ executada no estado $s$. Ou seja
 
-De qualquer forma, é possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
+$$q_{\pi}(s,a) \equiv E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ 
+
+É possível desenvolver essa equação usando as mesmas ideias da seção anterior. Nesse caso a conclusão seria que
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
+#### otimalidade
 
-#### generalizações
+Seria possível avançar rumo aos métodos, de forma relativamente decente, conhecendo apenas os conceitos e resultados discutidos até aqui, mas é útil -- e interessante -- olhar rapidamente para a ideia de otimalidade, que é tão simples quanto a noção de "melhor possível", ou seja, uma política ótima é uma que, dentre todas as políticas possíveis, dá os maiores retornos possíveis para todos os estados. Como 
 
-blablabla
+$$v_{\pi}(s) \equiv E_{\pi}\left[ G_t \mid S_t = s\right]$$
+
+então
+
+$$v_{\pi}(s) \geq v_{\pi^{\prime}}(s) \longrightarrow \pi \geq \pi^{\prime}, \,\, \forall s \in S$$
+
+Todas as políticas ótimas compartilham as mesmas funções estado-valor
+
+$$v^{*}(s) \equiv \underset{\pi}{max}\, v_{\pi}(s), \,\, \forall s \in S$$
+
+e ação-estado-valor
+
+$$q^{*}(s,a) \equiv \underset{\pi}{max}\, q_{\pi}(s,a), \,\, \forall s \in S, \, \forall a \in A$$
+
+Conceitualmente -- e por construção -- o valor de um estado de acordo com a política ótima deve coincidir com o retorno esperado associado a esse estado ao se executar a melhor ação do estado -- certo? Aqui ajuda notar que
+
+$$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a)$$
+
+então
+
+$$
+v^{*}(s) = \underset{a}{max} E_{\pi^{*}}\left[ G_t \mid S_t = s, A_t = a\right] \equiv \underset{a}{max}\, q^{*}(s,a)
+$$
+
+de onde é possível escrever
+
+$$
+\begin{aligned}
+v^{*}(s) &\equiv \underset{a}{max}\, q^{*}(s,a) \\
+&= \underset{a}{max}\, \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v^{*}(s') \right]
+\end{aligned}
+$$
+
+e
+
+$$
+\begin{aligned}
+q^{*}(s,a) &= \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v^{*}(s') \right] \\
+&= \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma \underset{a^{\prime}}{max}\, q^{*}(s',a') \right] 
+\end{aligned}
+$$
+
 
 ### _temporal-difference learning_ 
 
