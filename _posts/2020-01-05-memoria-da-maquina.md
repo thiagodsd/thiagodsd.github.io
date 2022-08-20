@@ -193,6 +193,11 @@ $$q_{\pi}(s,a) \equiv E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
+
+#### comentários
+
+##### operador de bellman
+
 É curioso notar que 
 
 $$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a).$$
@@ -227,7 +232,7 @@ T_{2}^{\pi} Q^{\pi} &= Q^{\pi}
 \end{aligned}
 $$
 
-#### otimalidade
+##### otimalidade
 
 Seria possível avançar rumo aos métodos, de forma relativamente decente, conhecendo apenas os conceitos e resultados discutidos até aqui, mas é útil -- e interessante -- olhar rapidamente para a ideia de otimalidade, que é tão simples quanto a noção de "melhor possível", ou seja, uma política ótima é uma que, dentre todas as políticas possíveis, dá os maiores retornos possíveis para todos os estados. Como 
 
