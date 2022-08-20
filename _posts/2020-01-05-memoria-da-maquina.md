@@ -193,37 +193,33 @@ $$q_{\pi}(s,a) \equiv E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
+É curioso notar que 
+
+$$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a).$$
 
 #### comentários
 
 ##### operador de bellman
 
-É curioso notar que 
+No caso de políticas determinísticas $a = \pi(s)$, então
 
-$$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a).$$
+$$
+\begin{aligned}
+v_{\pi}(s) &= r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  v_{\pi}(s') \\
+q_{\pi}(s,a) &= r(s,a)  + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a) q_{\pi}(s', \pi(s'))
+\end{aligned}
+$$
 
-Além disso, no caso de políticas determinísticas
+Nesse cenário determinístico é possível construir operadores com propriedades muito importantes -- exploradas nesse texto. Os operadores são
 
-$$a = \pi(s)$$
+$$
+\begin{aligned}
+(T_{1}^{\pi} V)(s) &= r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  V(s') \\
+(T_{2}^{\pi} Q)(s,a) &= r(s,a) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  Q(s', \pi(s')) 
+\end{aligned}
+$$
 
-então
-
-$$v_{\pi}(s) = r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  v_{\pi}(s') $$
-
-e
-
-$$q_{\pi}(s,a) = r(s,a)  + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a) q_{\pi}(s', \pi(s')).$$
-
-Nesse cenário determinístico é possível construir operadores com propriedades importantes -- que não discutidas ou exploradas nesse texto. Os operadores são
-
-$$\begin{cases}
-T_{1}^{\pi} : (S \rightarrow \mathbb{R}) \rightarrow (S \rightarrow \mathbb{R}) \,\, \text{tal que} \\ 
-(T_{1}^{\pi} V)(s) = r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  V(s') \\ \\
-T_{2}^{\pi} : (S \times A \rightarrow \mathbb{R}) \rightarrow (S \times A \rightarrow \mathbb{R}) \,\, \text{tal que} \\
-(T_{2}^{\pi} Q)(s,a) = r(s,a) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  Q(s', \pi(s')) \\
-\end{cases}$$
-
-Então as equações de Bellman assumem a forma
+Com $T_{1}^{\pi} : (S \rightarrow \mathbb{R}) \rightarrow (S \rightarrow \mathbb{R})$ e $T_{2}^{\pi} : (S \times A \rightarrow \mathbb{R}) \rightarrow (S \times A \rightarrow \mathbb{R})$. Então as equações de Bellman assumem a forma
 
 $$
 \begin{aligned}
@@ -234,7 +230,7 @@ $$
 
 ##### otimalidade
 
-Seria possível avançar rumo aos métodos, de forma relativamente decente, conhecendo apenas os conceitos e resultados discutidos até aqui, mas é útil -- e interessante -- olhar rapidamente para a ideia de otimalidade, que é tão simples quanto a noção de "melhor possível", ou seja, uma política ótima é uma que, dentre todas as políticas possíveis, dá os maiores retornos possíveis para todos os estados. Como 
+Uma política ótima é alguma que, dentre todas as políticas possíveis, dá os maiores retornos esperados possíveis para todos os estados. Como 
 
 $$v_{\pi}(s) \equiv E_{\pi}\left[ G_t \mid S_t = s\right]$$
 
@@ -242,13 +238,14 @@ então
 
 $$v_{\pi}(s) \geq v_{\pi^{\prime}}(s) \longrightarrow \pi \geq \pi^{\prime}, \,\, \forall s \in S$$
 
-Todas as políticas ótimas compartilham as mesmas funções estado-valor
+É possível existir mais de uma política ótima, porém todas compartilham as mesmas funções estado-valor e ação-estado-valor
 
-$$v^{*}(s) \equiv \underset{\pi}{max}\, v_{\pi}(s), \,\, \forall s \in S$$
-
-e ação-estado-valor
-
-$$q^{*}(s,a) \equiv \underset{\pi}{max}\, q_{\pi}(s,a), \,\, \forall s \in S, \, \forall a \in A$$
+$$
+\begin{aligned}
+v^{*}(s) &\equiv \underset{\pi}{max}\, v_{\pi}(s), & \forall s \in S \\
+q^{*}(s,a) &\equiv \underset{\pi}{max}\, q_{\pi}(s,a), & \forall s \in S, \, \forall a \in A
+\end{aligned}
+$$
 
 Conceitualmente -- e por construção -- o valor de um estado de acordo com a política ótima deve coincidir com o retorno esperado associado a esse estado ao se executar a melhor ação do estado -- certo? Então
 
