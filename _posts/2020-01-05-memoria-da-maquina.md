@@ -126,12 +126,16 @@ lim_{T\to\infty}G_t =& R_{t+1} + \gamma G_{t+1}
 \end{aligned}
 $$
 
-Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço
+Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço:
+
++ função estado-valor $v_{\pi}(s)$
++ função estado-ação-valor $q_{\pi}(s,a)$
+
+#### função $v_{\pi}(s)$
 
 + função estado-valor $v_{\pi}(s)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$
     + que também pode ser interpretada como uma função que atribui um valor a um estado $s$ quando uma política $\pi$ é seguida<br/><br/>
-+ função ação-valor $q_{\pi}(s,a)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$
-    + que também pode ser interpretada como uma função que atribui um valor à ação $a$ executada no estado $s$
+
 
 Desenvolvendo $v_{\pi}$
 
@@ -180,10 +184,21 @@ $$
 
 $$\boxed{v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
-Eu tenho sérias dúvidas se essa já é a [equação de Bellman](https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Bellman) para sistemas descritos como MDP, ou se as equações de Bellman são as que definem as condições de otimalidade para a solução da equação acima. De qualquer forma, é possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
+Eu tenho sérias dúvidas se essa já é a [equação de Bellman](https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_Bellman) para sistemas descritos como MDP, ou se as equações de Bellman são as que definem as condições de otimalidade para a solução da equação acima. 
+
+#### função $q_{\pi}(s,a)$
+
++ função ação-valor $q_{\pi}(s,a)$, que "mede" a recompensa esperada por seguir a política $\pi$ partindo do estado $s$ executando a ação $a$
+    + que também pode ser interpretada como uma função que atribui um valor à ação $a$ executada no estado $s$
+
+De qualquer forma, é possível desenvolver $$q_{\pi}(s,a) = E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$ usando as mesmas ideias e resultados acima, para concluir que
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
+
+#### generalizações
+
+blablabla
 
 ### _temporal-difference learning_ 
 
