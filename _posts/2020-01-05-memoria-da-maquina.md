@@ -218,6 +218,15 @@ T_{2}^{\pi} : (S \times A \rightarrow \mathbb{R}) \rightarrow (S \times A \right
 (T_{2}^{\pi} Q)(s,a) = r(s,a) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  Q(s', \pi(s')) \\
 \end{cases}$$
 
+Então as equações de Bellman para o caso determinístico assumem a forma
+
+$$
+\begin{aligned}
+T_{1}^{\pi} V^{\pi} &= V^{\pi} \\
+T_{2}^{\pi} Q^{\pi} &= Q^{\pi} 
+\end{aligned}
+$$
+
 #### otimalidade
 
 Seria possível avançar rumo aos métodos, de forma relativamente decente, conhecendo apenas os conceitos e resultados discutidos até aqui, mas é útil -- e interessante -- olhar rapidamente para a ideia de otimalidade, que é tão simples quanto a noção de "melhor possível", ou seja, uma política ótima é uma que, dentre todas as políticas possíveis, dá os maiores retornos possíveis para todos os estados. Como 
