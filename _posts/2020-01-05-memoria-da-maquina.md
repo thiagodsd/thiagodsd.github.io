@@ -218,7 +218,7 @@ T_{2}^{\pi} : (S \times A \rightarrow \mathbb{R}) \rightarrow (S \times A \right
 (T_{2}^{\pi} Q)(s,a) = r(s,a) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  Q(s', \pi(s')) \\
 \end{cases}$$
 
-Então as equações de Bellman para o caso determinístico assumem a forma
+Então as equações de Bellman assumem a forma
 
 $$
 \begin{aligned}
