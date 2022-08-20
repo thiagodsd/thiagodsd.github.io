@@ -126,7 +126,11 @@ lim_{T\to\infty}G_t =& R_{t+1} + \gamma G_{t+1}
 \end{aligned}
 $$
 
-Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço:
+Disso, surgem provavelmente as duas funções em torno das quais orbitam todos os métodos de aprendizagem por reforço: $v_{\pi}(s)$ e $q_{\pi}(s,a)$. 
+
+É interessante sintetizar que, **conceitualmente, o objetivo da aprendizagem por reforço é aprender políticas $\pi$** que otimizem a função objetivo 
+
+$$J(\pi) = E_{\pi}\left[ \sum_{t} \gamma^{t}r(s_t, a_t) \right]$$
 
 #### função $v_{\pi}(s)$
 
