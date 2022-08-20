@@ -193,6 +193,31 @@ $$q_{\pi}(s,a) \equiv E_{\pi}\left[ G_t \mid S_t = s, A_t = a\right]$$
 
 $$\boxed{q_{\pi}(s,a) = \sum_{r \in \mathcal{R}} \sum_{s' \in \mathcal{S}}  p(s', r \mid s, a) \left[ r + \gamma v_{\pi}(s') \right]}$$
 
+É curioso notar que 
+
+$$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a).$$
+
+Além disso, no caso de políticas determinísticas
+
+$$a = \pi(s)$$
+
+então
+
+$$v_{\pi}(s) = r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  v_{\pi}(s') $$
+
+e
+
+$$q_{\pi}(s,a) = r(s,a)  + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a) q_{\pi}(s', \pi(s')).$$
+
+Nesse cenário determinístico é possível construir operadores com propriedades importantes -- que não discutidas ou exploradas nesse texto. Os operadores são
+
+$$\begin{cases}
+T_{1}^{\pi} : (S \rightarrow \mathbb{R}) \rightarrow (S \rightarrow \mathbb{R}) \,\, \text{tal que} \\ 
+(T_{1}^{\pi} V)(s) = r(s,\pi(s)) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  V(s') \\ \\
+T_{2}^{\pi} : (S \times A \rightarrow \mathbb{R}) \rightarrow (S \times A \rightarrow \mathbb{R}) \,\, \text{tal que} \\
+(T_{2}^{\pi} Q)(s,a) = r(s,a) + \gamma \sum_{s' \in \mathcal{S}}  p(s' \mid s, a)  Q(s', \pi(s')) \\
+\end{cases}$$
+
 #### otimalidade
 
 Seria possível avançar rumo aos métodos, de forma relativamente decente, conhecendo apenas os conceitos e resultados discutidos até aqui, mas é útil -- e interessante -- olhar rapidamente para a ideia de otimalidade, que é tão simples quanto a noção de "melhor possível", ou seja, uma política ótima é uma que, dentre todas as políticas possíveis, dá os maiores retornos possíveis para todos os estados. Como 
@@ -211,11 +236,7 @@ e ação-estado-valor
 
 $$q^{*}(s,a) \equiv \underset{\pi}{max}\, q_{\pi}(s,a), \,\, \forall s \in S, \, \forall a \in A$$
 
-Conceitualmente -- e por construção -- o valor de um estado de acordo com a política ótima deve coincidir com o retorno esperado associado a esse estado ao se executar a melhor ação do estado -- certo? Aqui ajuda notar que
-
-$$v_{\pi}(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) q_{\pi}(s,a)$$
-
-então
+Conceitualmente -- e por construção -- o valor de um estado de acordo com a política ótima deve coincidir com o retorno esperado associado a esse estado ao se executar a melhor ação do estado -- certo? Então
 
 $$
 v^{*}(s) = \underset{a}{max} E_{\pi^{*}}\left[ G_t \mid S_t = s, A_t = a\right] \equiv \underset{a}{max}\, q^{*}(s,a)
