@@ -1,4 +1,25 @@
+# Jekyll build artifacts
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+
+# Ruby/Bundler
+vendor/
+.bundle/
+Gemfile.lock
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System
+.DS_Store
+Thumbs.db
+
+# Project specific
+.mcp.json
+CLAUDE.md

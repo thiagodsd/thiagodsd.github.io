@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 
-
-gem 'jekyll'
-gem "jekyll-paginate"
+gem 'jekyll', '~> 4.3'
+gem 'jekyll-paginate'
 gem 'jekyll-scholar'
-gem "rouge"
+gem 'rouge'
 gem 'jekyll-toc'
-gem 'jekyll-latex'
+
+# Gems necessárias para Ruby 3.2+
+gem 'webrick'

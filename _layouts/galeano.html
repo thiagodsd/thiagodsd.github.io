@@ -49,27 +49,21 @@
             vertical-align : middle; }
   </style>
   {% endif %}
-  <!-- latex -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML">
-    MathJax.Hub.Config({
-      "HTML-CSS": {
-        availableFonts: ["TeX"],
+  <!-- MathJax v3 - Modern LaTeX rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams',
+        packages: {'[+]': ['ams', 'color']}
       },
-      tex2jax: {
-        inlineMath: [['$','$'],["\\(","\\)"]]},
-        displayMath: [ ['$$','$$'], ['\[','\]'] ],
-      TeX: {
-        extensions: ["AMSmath.js", "AMSsymbols.js", "color.js"],
-        equationNumbers: {
-          autoNumber: "AMS"
-        }
-      },
-      showProcessingMessages: false,
-      messageStyle: "none",
-      imageFont: null,
-      "AssistiveMML": { disabled: true }
-    });
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
   </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
   <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
 </head>
@@ -77,10 +71,9 @@
   {% include header.html %}
 
   {{ content }}
-  
-  <hr>
-  <!-- 
-    <p><small><i>build with <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://github.com/cyevgeniy/jekyll-true-minimal/">true minimal theme</a></i></small></p> 
-  -->
+
+  <p style="text-align: center; font-size: small; color: #666; margin-top: 2em;">
+    <i>orgulhosamente escrito sob a garoa cortante de são paulo, as copas melódicas de maringá e o sol escaldante de presidente prudente</i>
+  </p>
 </body>
 </html>
