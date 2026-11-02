@@ -2,9 +2,10 @@
 layout: post
 title:  "tensor de faraday"
 description: construção do tensor de faraday a partir de analogias com a forma clássica da força de lorentz
-img: /img/t_faraday.png
+image: /img/t_faraday.png
 date:   2017-07-21 05:02:41 +0300
 tags: física notas
+math: true
 ---
 
 No limite clássico a relação entre presença de campos elétricos e magnéticos e a força por eles exercida sobre um corpo eletricamente carregado é descrita pela equação de [força de Lorentz](https://en.wikipedia.org/wiki/Lorentz_force)

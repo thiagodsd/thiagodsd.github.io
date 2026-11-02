@@ -2,15 +2,14 @@
 layout: galeano
 ---
 
-<h1>{{ page.title }}{{ page.shortUrl }}</h1>
+<h1>{{ page.title }}</h1>
 
 {% include toc.html html=content h_max=4 class="section-nav" %}
 
 {{ content }}
 
 <small>tags: <i>{{ page.tags | join: ", "}}</i></small>
-        
-{% if site.disqus-id %} {% include comments.html %} {% endif %}
+
 
 <script>
     var headings = document.querySelectorAll("h2[id]");

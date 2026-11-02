@@ -1,4 +1,4 @@
 <header>
-    <h1><a href='{{ site.url }}/'>{{ site.name }}</a></h1>
+    <h1><a href='{{ "/" | relative_url }}'>{{ site.name }}</a></h1>
 </header>
-<a href='{{ site.url }}/'>início</a> | <a href='{{ site.url }}/arquivo/'>arquivo</a> | <a href='{{ site.url }}/sobre/'>sobre</a>
+<a href='{{ "/" | relative_url }}'>início</a> | <a href='{{ "/arquivo/" | relative_url }}'>arquivo</a> | <a href='{{ "/sobre/" | relative_url }}'>sobre</a>

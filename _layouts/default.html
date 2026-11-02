@@ -1,38 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <meta charset='utf-8'>
-  <!-- title -->
-  <title>
-      {% if page.title %}{{ page.title }}{% else %}{{ site.name }} &mdash; {{ site.description }}{% endif %}
-  </title>
-
-  <!-- meta description -->
-  <meta name="description" content="{{ site.description }}">
-  <!-- twitter card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ page.title }}">
-  {% if page.description %}<meta name="twitter:description" content="{{ page.description }}">{% endif %}
-  {% if page.img %}<meta property="og:image" content="{{site.url}}{{page.img}}">{% endif %}
-  <!-- highlighter -->
-  {% if site.highlighter %}<link rel='stylesheet' href='{{ site.url }}/assets/css/syntax.css' type='text/css'>{% endif %}
-  <!-- responsiveness -->
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <!-- MathJax v3 - Modern LaTeX rendering -->
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        tags: 'ams',
-        packages: {'[+]': ['ams', 'color']}
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
+{% include head.html %}
 </head>
 <body>
   {% include header.html %}

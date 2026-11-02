@@ -1,0 +1,34 @@
+  <meta charset='utf-8'>
+  <title>
+      {% if page.title %}{{ page.title }}{% else %}{{ site.name }} &mdash; {{ site.description }}{% endif %}
+  </title>
+  {% seo title=false %}
+  {% feed_meta %}
+  <link rel='stylesheet' href='{{ "/assets/css/syntax.css" | relative_url }}' type='text/css'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  {% if page.math %}
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        tags: 'ams'
+      }{% if page.pseudocode %},
+      // o pseudocode.js usa MathJax.version e tex2chtml: só renderiza depois do MathJax pronto
+      startup: {
+        ready() {
+          MathJax.startup.defaultReady();
+          MathJax.startup.promise.then(() => {
+            if (window.pseudocode) pseudocode.renderClass('pseudocode');
+          });
+        }
+      }{% endif %}
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
+  {% endif %}
+  {% if page.pseudocode %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.css" integrity="sha384-ff9LEHNvuDqxJT/JRjAeQ1cWTWambRLe5j49SnOzhaotb23KEQkCanV+ooL+ch4k" crossorigin="anonymous">
+  <!-- síncrono de propósito: precisa existir antes do startup.promise do MathJax -->
+  <script src="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.js" integrity="sha384-i3+YbLfC66kxqBVtgH6I+lEFAr+57mVZY/MSthCK/oTPo0rWCRzW/kSg2mJnTKLs" crossorigin="anonymous"></script>
+  {% endif %}

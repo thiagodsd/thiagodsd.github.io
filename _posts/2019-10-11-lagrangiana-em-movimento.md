@@ -2,10 +2,11 @@
 layout: post
 title:  "lagrangiana em movimento"
 description: estudo do espaço de configurações evoluindo no tempo
-img: /img/t_lagrangiana-em-movimento.png
+image: /img/t_lagrangiana-em-movimento.png
 date:   2019-10-11 00:02:51 +0300
 tags: física visualizacao anotacoes
 toc: true
+math: true
 ---
 
 Aqui há algumas anotações das minhas tentativas de enxergar o espaço de configurações evoluindo no tempo. Por serem anotações, em contraste com as páginas de "notas", abaixo não há muitos comentários sobre teoria ou programação, apenas pontos importantes, referências e códigos.
@@ -14,11 +15,11 @@ Aqui há algumas anotações das minhas tentativas de enxergar o espaço de conf
 
 Abaixo o diagrama de um sistema que gosto muito: uma espécie de pêndulo vertical com base móvel obedecendo a um movimento periódico.
 
-![diagrama-mec1-barra](/img/lagrangiana-em-movimento_diagrama-mec1-barra.png)
+![pêndulo de massa m e haste R preso a uma base que sobe e desce na barra vertical, z(t)](/img/lagrangiana-em-movimento_diagrama-mec1-barra.png)
 
 Na primeira vez que vi esse sistema o ângulo $\theta$ que a haste faz com a horizontal estava restrito ao intervalo de $-\frac{\pi}{2}$ a $\frac{\pi}{2}$, mas eu gosto da alternativa em que não existe essa barra vertical e o movimento é livre. Nesse caso o movimento do sistema seria mais ou menos assim:
 
-![gif lagrangiana-em-movimento_diagrama-mec1-barra](/img/lagrangiana-em-movimento_diagrama-mec1-barra_opt.gif)
+![animação do pêndulo girando livre sobre a base móvel](/img/lagrangiana-em-movimento_diagrama-mec1-barra_opt.gif)
 
 ## espaço de coordenadas no tempo
 
@@ -88,7 +89,7 @@ ani.save(fn+'.gif',writer='imagemagick',fps=fps)
 ```
 </div>
 
-![gif plot_configuration_space](/img/lagrangiana-em-movimento_plot_configuration_space_opt.gif)
+![animação da trajetória do sistema no espaço de configuração](/img/lagrangiana-em-movimento_plot_configuration_space_opt.gif)
 
 ## lagrangiana no tempo
 
@@ -168,4 +169,4 @@ ani.save(fn+'.gif',writer='imagemagick',fps=fps)
 ```
 </div>
 
-![gif lagrangiana-em-movimento_plot_lagrangian_opt](/img/lagrangiana-em-movimento_plot_lagrangian_opt.gif)
+![animação da superfície da lagrangiana em 3D](/img/lagrangiana-em-movimento_plot_lagrangian_opt.gif)
