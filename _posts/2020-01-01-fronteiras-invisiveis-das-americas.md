@@ -6,12 +6,12 @@ date:   2020-01-01 15:25:40 +0300
 tags: história
 ---
 
-Episódios do [*Fronteiras Invisíveis do Futebol*](https://xadrezverbal.com/category/audio/podcast-fronteiras-invisiveis-do-futebol/) sobre nações americanas e antigos colonizadores, mais ou menos ordenados por [datas de independência](https://en.wikipedia.org/wiki/Decolonization_of_the_Americas#Timeline), acompanhados de links para vídeos de resumo histórico produzidos pelo canal [*El Mapa de Sebas*](https://www.youtube.com/channel/UCVbOEcs6RMxXXX3WWNtl_Fw), para os livros da série Histórias Mínimas publicados por [*El Colegio de México*](https://libros.colmex.mx/buscador/) e para os episódios da série [Pulso Latino](https://pulsolatinopodcast.com/episodios/series/) do podcast Pulso Latino.
+Episódios do [*Fronteiras Invisíveis do Futebol*](https://xadrezverbal.com/category/audio/podcast-fronteiras-invisiveis-do-futebol/) sobre nações americanas e antigos colonizadores, mais ou menos ordenados por [datas de independência](https://en.wikipedia.org/wiki/Decolonization_of_the_Americas#Timeline), acompanhados de links para vídeos de resumo histórico produzidos pelo canal [*El Mapa de Sebas*](https://www.youtube.com/channel/UCVbOEcs6RMxXXX3WWNtl_Fw), para os livros da série Histórias Mínimas publicados por [*El Colegio de México*](https://libros.colmex.mx/buscador/) e para os episódios da série [Pulso Latino](https://creators.spotify.com/pod/profile/pulsolatinopodcast/) do podcast Pulso Latino.
 
 <br/>
 
 <p style="text-align: center;">
-[#13 Copa América](http://www.central3.com.br/fronteiras-invisiveis-do-futebol-13-copa-america/)<br/>
+[#13 Copa América](https://central3.com.br/fronteiras-invisiveis-do-futebol-13-copa-america/)<br/>
 <small>_[HISTORIA MÍNIMA DE CENTROAMÉRICA](https://libros.colmex.mx/ficha/?b=1382) de Rodolfo Pastor, 2011_</small><br/>
 
 
@@ -19,7 +19,7 @@ Episódios do [*Fronteiras Invisíveis do Futebol*](https://xadrezverbal.com/cat
 </p>
 
 + **1783-09-03** [#24 EUA](https://www.youtube.com/watch?v=qaQIO-rWrGs) &#127482;&#127480;
-  + [#91 Fronteiras Invisíveis do Futebol Americano](http://www.central3.com.br/fronteiras-invisiveis-do-futebol-americano-91/)
+  + [#91 Fronteiras Invisíveis do Futebol Americano](https://central3.com.br/fronteiras-invisiveis-do-futebol-americano-91/)
   + <small>_[HISTORIA MÍNIMA DE ESTADOS UNIDOS DE AMÉRICA](https://libros.colmex.mx/ficha/?b=1471) de Erika Pani, 2016_</small>
   + <small>_[HISTORIA de ESTADOS UNIDOS de AMÉRICA en 20 MINUTOS](https://www.youtube.com/watch?v=bDj1q4uUwmo)_</small><br/><br/>
 
@@ -82,7 +82,7 @@ Episódios do [*Fronteiras Invisíveis do Futebol*](https://xadrezverbal.com/cat
 + **1825-08-29** [#90 Seleção Brasileira](https://open.spotify.com/episode/5AfuXqm1GGnqIT2y1VfCA3?si=GGh8ZjCoTjuChFg5QQ8IxQ) &#127463;&#127479;
    + <small>[#13 Caminhos Latinos - Brasil](https://anchor.fm/pulsolatinopodcast/episodes/13-I-Caminhos-Latinos-I-Brasil-enkmgs)</small>
    + <small>_[HISTORIA de BRASIL en 18 MINUTOS](https://www.youtube.com/watch?v=noJksXthGHM)_</small>
-   + [#26 Chapecó](http://www.central3.com.br/fronteiras-invisiveis-do-futebol-26-chapeco/)
+   + [#26 Chapecó](https://central3.com.br/fronteiras-invisiveis-do-futebol-26-chapeco/)
    + [#31 Pernambuco](https://open.spotify.com/episode/7H8nbkLaMIGGrA9UwOxatP?si=CzAfR3ZGTR-vSazwJeOIMQ)
    + [#34 Minas Gerais](https://open.spotify.com/episode/5EUYZmsd6HU4doASulBHmo?si=_B9DdW9UTL2P3r2VAuH39A)
    + [#38 São Paulo](https://open.spotify.com/episode/5gG1xrTQYL3Z2Iw9xiNGHn?si=Z1b6XPwaQSeMtjil85TwpQ)
@@ -135,7 +135,7 @@ Eduardo Galeano:
 
 - - -
 
-[Historia de América Latina](https://www.rtve.es/alacarta/videos/historia-de-america-latina/), 2013
+[Historia de América Latina](https://www.rtve.es/alacarta/videos/historia-de-america-latina/historia-america-latina-imaginarios-latinoamericanos/1776147/), 2013
 
 1. [Imaginarios latinoamericanos](https://www.rtve.es/alacarta/videos/historia-de-america-latina/historia-america-latina-imaginarios-latinoamericanos/1776147/)
 2. [Poblamiento de América latina](https://www.rtve.es/alacarta/videos/historia-de-america-latina/historia-america-latina-poblamiento-america-latina/1780890/)

@@ -293,7 +293,7 @@ $$\text{TD: } \, V(S_t) \leftarrow V(S_t) + \alpha\left[ R_{t+1} - \gamma V(S_{t
 
 de onde surge a forma mais primitiva do algoritmo TD para estimativa de $v_{\pi}$
 
-<pre id="tdzero" class="pseudocode" style="display:hidden;">
+<pre id="tdzero" class="pseudocode" style="display:none;">
 \begin{algorithm}
 \caption{TD}
 \begin{algorithmic}
@@ -314,13 +314,7 @@ de onde surge a forma mais primitiva do algoritmo TD para estimativa de $v_{\pi}
 \end{algorithm}
 </pre>
 
-<script>
-    pseudocode.renderElement(document.getElementById("tdzero"));
-</script>
 
-<script>
-    pseudocode.renderClass("pseudocode");
-</script>
 
 Dessa estrutura derivam dois importantes métodos
 
@@ -335,7 +329,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q(S_{t+1}, 
 <div class='two-column-column'>
 <div class='left-column'>
 
-<pre id="sarsa" class="pseudocode" style="display:hidden;">
+<pre id="sarsa" class="pseudocode" style="display:none;">
 \begin{algorithm}
 \caption{SARSA}
 \begin{algorithmic}
@@ -358,13 +352,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q(S_{t+1}, 
 \end{algorithm}
 </pre>
 
-<script>
-    pseudocode.renderElement(document.getElementById("sarsa"));
-</script>
 
-<script>
-    pseudocode.renderClass("pseudocode");
-</script>
 
 </div>
 </div>
@@ -391,7 +379,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a
 <div class='two-column-column'>
 <div class='left-column'>
 
-<pre id="qlearning" class="pseudocode" style="display:hidden;">
+<pre id="qlearning" class="pseudocode" style="display:none;">
 \begin{algorithm}
 \caption{Q-Learning}
 \begin{algorithmic}
@@ -412,13 +400,7 @@ $$Q(S_t, A_t) \leftarrow Q(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma \underset{a
 \end{algorithm}
 </pre>
 
-<script>
-    pseudocode.renderElement(document.getElementById("qlearning"));
-</script>
 
-<script>
-    pseudocode.renderClass("pseudocode");
-</script>
 
 </div>
 </div>
@@ -446,7 +428,7 @@ $$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{
 <div class='two-column-column'>
 <div class='left-column'>
 
-<pre id="doubleqlearning" class="pseudocode" style="display:hidden;">
+<pre id="doubleqlearning" class="pseudocode" style="display:none;">
 \begin{algorithm}
 \caption{Double Q-Learning}
 \begin{algorithmic}
@@ -474,13 +456,7 @@ $$Q_{1}(S_t, A_t) \leftarrow Q_{1}(S_t, A_t) + \alpha\left[ R_{t+1} - \gamma Q_{
 \end{algorithm}
 </pre>
 
-<script>
-    pseudocode.renderElement(document.getElementById("doubleqlearning"));
-</script>
 
-<script>
-    pseudocode.renderClass("pseudocode");
-</script>
 
 </div>
 </div>

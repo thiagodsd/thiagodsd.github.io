@@ -16,7 +16,7 @@ layout: galeano
     var headings = document.querySelectorAll("h2[id]");
 
     for (var i = 0; i < headings.length; i++) {
-        headings[i].innerHTML =
-          '<span class="ss"><a href="#' + headings[i].id + '">' + '&#xa7;' + '</a></span> ' + headings[i].innerText;
+        headings[i].insertAdjacentHTML('afterbegin',
+          '<span class="ss"><a href="#' + headings[i].id + '">&#xa7;</a></span> ');
     }
 </script>
