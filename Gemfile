@@ -1,10 +1,7 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '~> 4.3'
-gem 'jekyll-paginate'
-gem 'jekyll-scholar'
-gem 'rouge'
-gem 'jekyll-toc'
+# igual à produção: o GitHub Pages (build legado) usa github-pages 232
+gem 'github-pages', '= 232', group: :jekyll_plugins
 
-# Gems necessárias para Ruby 3.2+
+# Ruby 3+ não traz webrick, e o jekyll serve precisa dele
 gem 'webrick'

@@ -13,16 +13,10 @@ kramdown:
   syntax_highlighter: rouge
   parse_block_html: true
 
+timezone: Etc/UTC
+
 plugins:
   - jekyll-paginate
-  - jekyll/scholar
-  - jekyll-toc
-
-
-toc:
-  min_level: 2
-  max_level: 4
-  ordered_list: false
 
 paginate: 10
 paginate_path: /page-:num
@@ -35,13 +29,6 @@ destination: ./_site
 sass:
     style: :compressed
     sass_dir: assets/css/
-
-scholar:
-  cite_class: citation
-  style: frontiers-in-physics
-  bibtex_filters:
-    - latex
-  bibliography_template: bib
 
 collections:
   isnebei:
